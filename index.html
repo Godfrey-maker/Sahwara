@@ -1,0 +1,2079 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SAHWARA AEROMEDIQ NPC - Autonomous aerial medical logistics for underserved rural communities in South Africa. One Health drone delivery integrating human health, animal health, and environmental stewardship.">
+    <meta name="keywords" content="medical drone delivery, rural healthcare, One Health, KwaZulu-Natal, UAV logistics, South Africa">
+    <meta property="og:title" content="SAHWARA AEROMEDIQ NPC | Wings of Hope, Hands of Care">
+    <meta property="og:description" content="Integrated One Health drone logistics for rural South Africa. Medical supplies, vaccines, and diagnostic samples delivered by autonomous aerial vehicles.">
+    <meta property="og:type" content="website">
+    <title>SAHWARA AEROMEDIQ NPC | Wings of Hope, Hands of Care</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        :root {
+            --primary: #1a3a4a;
+            --primary-light: #2a5a6a;
+            --accent: #c41e3a;
+            --accent-dark: #a01830;
+            --gold: #b8860b;
+            --text-dark: #1a1a1a;
+            --text-medium: #4a4a4a;
+            --text-light: #6a6a6a;
+            --bg-cream: #faf8f5;
+            --bg-white: #ffffff;
+            --border-light: #e8e4df;
+            --shadow-soft: 0 4px 24px rgba(0,0,0,0.06);
+            --shadow-medium: 0 8px 32px rgba(0,0,0,0.1);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: var(--text-dark);
+            background: var(--bg-white);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-weight: 600;
+            line-height: 1.2;
+        }
+
+        /* ===== NAVIGATION ===== */
+        .navbar {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 1000;
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-light);
+            transition: all 0.3s ease;
+        }
+        .navbar.scrolled { box-shadow: var(--shadow-soft); }
+
+        .nav-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 72px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+        .logo-icon {
+            width: 40px; height: 40px;
+            background: var(--primary);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 18px;
+        }
+        .logo-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--primary);
+            letter-spacing: 0.5px;
+        }
+        .logo-sub {
+            font-size: 0.65rem;
+            color: var(--text-light);
+            font-weight: 500;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            display: block;
+            margin-top: -2px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-medium);
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.2s;
+            position: relative;
+        }
+        .nav-links a:hover { color: var(--primary); }
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px; left: 0;
+            width: 0; height: 2px;
+            background: var(--accent);
+            transition: width 0.3s;
+        }
+        .nav-links a:hover::after { width: 100%; }
+
+        .nav-cta { display: flex; gap: 1rem; }
+
+        .btn {
+            padding: 10px 24px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+            cursor: pointer;
+            border: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .btn-outline {
+            color: var(--primary);
+            border: 1.5px solid var(--primary);
+            background: transparent;
+        }
+        .btn-outline:hover { background: var(--primary); color: white; }
+        .btn-primary {
+            background: var(--accent);
+            color: white;
+            border: 1.5px solid var(--accent);
+        }
+        .btn-primary:hover {
+            background: var(--accent-dark);
+            border-color: var(--accent-dark);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 16px rgba(196,30,58,0.3);
+        }
+        .btn-gold {
+            background: var(--gold);
+            color: white;
+            border: 1.5px solid var(--gold);
+        }
+        .btn-gold:hover {
+            background: #9a6d08;
+            border-color: #9a6d08;
+            transform: translateY(-1px);
+        }
+        .btn-large { padding: 14px 32px; font-size: 0.95rem; }
+        .btn-white {
+            background: white;
+            color: var(--primary);
+            border: 2px solid white;
+        }
+        .btn-white:hover { background: transparent; color: white; }
+        .btn-outline-white {
+            color: white;
+            border: 2px solid rgba(255,255,255,0.4);
+            background: transparent;
+        }
+        .btn-outline-white:hover {
+            border-color: white;
+            background: rgba(255,255,255,0.1);
+        }
+
+        .mobile-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--primary);
+            cursor: pointer;
+        }
+
+        /* ===== HERO ===== */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, var(--bg-cream) 0%, #f0ebe4 100%);
+            padding-top: 72px;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%; right: -20%;
+            width: 800px; height: 800px;
+            background: radial-gradient(circle, rgba(26,58,74,0.04) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .hero-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(196,30,58,0.08);
+            color: var(--accent);
+            padding: 8px 16px;
+            border-radius: 100px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+        }
+        .hero-badge i { font-size: 0.7rem; }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+        }
+        .hero h1 span { color: var(--accent); }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: var(--text-medium);
+            margin-bottom: 2rem;
+            max-width: 540px;
+        }
+        .hero-tagline {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 1.1rem;
+            color: var(--gold);
+            margin-bottom: 2.5rem;
+        }
+        .hero-ctas { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+        .hero-image { position: relative; }
+        .hero-image img {
+            width: 100%;
+            border-radius: 12px;
+            box-shadow: var(--shadow-medium);
+        }
+        .hero-image::after {
+            content: '';
+            position: absolute;
+            bottom: -20px; right: -20px;
+            width: 100%; height: 100%;
+            border: 2px solid var(--gold);
+            border-radius: 12px;
+            z-index: -1;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 2.5rem;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border-light);
+        }
+        .hero-stat { text-align: left; }
+        .hero-stat-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+        .hero-stat-label {
+            font-size: 0.8rem;
+            color: var(--text-light);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-top: 4px;
+        }
+
+        /* ===== SECTIONS COMMON ===== */
+        section { padding: 6rem 2rem; }
+        .section-container { max-width: 1280px; margin: 0 auto; }
+        .section-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 4rem;
+        }
+        .section-label {
+            display: inline-block;
+            color: var(--accent);
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+        .section-header h2 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        .section-header p {
+            color: var(--text-medium);
+            font-size: 1.1rem;
+        }
+
+        /* ===== TRUSTED BY ===== */
+        .trusted-by {
+            background: var(--bg-white);
+            padding: 3rem 2rem;
+            border-top: 1px solid var(--border-light);
+            border-bottom: 1px solid var(--border-light);
+        }
+        .trusted-by-container { max-width: 1280px; margin: 0 auto; text-align: center; }
+        .trusted-by-label {
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+        }
+        .logos-grid {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+        }
+        .logo-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--text-light);
+            font-weight: 600;
+            font-size: 0.9rem;
+            opacity: 0.6;
+            transition: opacity 0.3s;
+        }
+        .logo-item:hover { opacity: 1; }
+        .logo-item i { font-size: 1.5rem; }
+
+        /* ===== CRISIS ===== */
+        .crisis { background: var(--bg-cream); }
+        .crisis-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+        .crisis-card {
+            background: var(--bg-white);
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow-soft);
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .crisis-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-medium);
+        }
+        .crisis-icon {
+            width: 64px; height: 64px;
+            background: rgba(196,30,58,0.08);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            color: var(--accent);
+            font-size: 1.5rem;
+        }
+        .crisis-card h3 {
+            font-size: 2rem;
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+        }
+        .crisis-card p { color: var(--text-medium); font-size: 0.95rem; }
+        .crisis-source {
+            text-align: center;
+            margin-top: 2rem;
+            font-size: 0.8rem;
+            color: var(--text-light);
+            font-style: italic;
+        }
+
+        /* ===== SOLUTION ===== */
+        .solution { background: var(--bg-white); }
+        .fleet-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+        .fleet-card {
+            background: var(--bg-cream);
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--border-light);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .fleet-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-medium);
+        }
+        .fleet-image {
+            height: 220px;
+            background: linear-gradient(135deg, #e8e4df 0%, #d4cfc8 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .fleet-image i { font-size: 4rem; color: var(--primary); opacity: 0.3; }
+        .fleet-badge {
+            position: absolute;
+            top: 1rem; right: 1rem;
+            background: var(--accent);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+        .fleet-content { padding: 1.5rem; }
+        .fleet-content h3 {
+            font-size: 1.3rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+        .fleet-content p {
+            color: var(--text-medium);
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+        }
+        .fleet-specs {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+        }
+        .fleet-spec {
+            text-align: center;
+            padding: 0.75rem;
+            background: var(--bg-white);
+            border-radius: 8px;
+        }
+        .fleet-spec-value {
+            font-weight: 700;
+            color: var(--primary);
+            font-size: 0.95rem;
+        }
+        .fleet-spec-label {
+            font-size: 0.7rem;
+            color: var(--text-light);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-top: 2px;
+        }
+
+        /* ===== PROCESS ===== */
+        .process { background: var(--bg-cream); }
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            position: relative;
+        }
+        .process-step { text-align: center; position: relative; }
+        .process-step:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            top: 32px; right: -1rem;
+            width: 2rem; height: 2px;
+            background: var(--border-light);
+        }
+        .process-number {
+            width: 64px; height: 64px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 0 auto 1.5rem;
+        }
+        .process-step h3 {
+            font-size: 1.1rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+        .process-step p { font-size: 0.9rem; color: var(--text-medium); }
+
+        /* ===== ONE HEALTH ===== */
+        .one-health {
+            background: var(--primary);
+            color: white;
+        }
+        .one-health .section-header h2,
+        .one-health .section-header p { color: white; }
+        .one-health .section-label { color: var(--gold); }
+        .health-pillars {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+        .health-pillar {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 12px;
+            padding: 2.5rem;
+            text-align: center;
+            transition: background 0.3s;
+        }
+        .health-pillar:hover { background: rgba(255,255,255,0.08); }
+        .health-pillar-icon {
+            width: 72px; height: 72px;
+            background: rgba(184,134,11,0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            color: var(--gold);
+            font-size: 1.5rem;
+        }
+        .health-pillar h3 { font-size: 1.3rem; margin-bottom: 1rem; }
+        .health-pillar p { color: rgba(255,255,255,0.7); font-size: 0.95rem; }
+        .health-pillar ul {
+            list-style: none;
+            margin-top: 1rem;
+            text-align: left;
+        }
+        .health-pillar ul li {
+            padding: 6px 0;
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.7);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .health-pillar ul li i { color: var(--gold); font-size: 0.7rem; }
+
+        /* ===== IMPACT ===== */
+        .impact { background: var(--bg-white); }
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+        }
+        .impact-card {
+            background: var(--bg-cream);
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            border: 1px solid var(--border-light);
+        }
+        .impact-card i {
+            font-size: 2rem;
+            color: var(--accent);
+            margin-bottom: 1rem;
+        }
+        .impact-card h3 {
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+        .impact-card p { font-size: 0.9rem; color: var(--text-medium); }
+
+        /* ===== BUSINESS MODEL ===== */
+        .business-model { background: var(--bg-cream); }
+        .model-cards {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        .model-card {
+            background: var(--bg-white);
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow-soft);
+            border: 1px solid var(--border-light);
+        }
+        .model-card-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        .model-card-header i { font-size: 1.5rem; color: var(--accent); }
+        .model-card-header h3 { font-size: 1.3rem; color: var(--primary); }
+        .model-card p { color: var(--text-medium); margin-bottom: 1.5rem; }
+        .model-metrics {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+        }
+        .model-metric {
+            background: var(--bg-cream);
+            padding: 1rem;
+            border-radius: 8px;
+        }
+        .model-metric-value {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+        .model-metric-label {
+            font-size: 0.75rem;
+            color: var(--text-light);
+            margin-top: 4px;
+        }
+        .model-note {
+            background: rgba(184,134,11,0.08);
+            border-left: 3px solid var(--gold);
+            padding: 1.5rem 2rem;
+            border-radius: 0 8px 8px 0;
+            margin-top: 2rem;
+        }
+        .model-note p { color: var(--text-medium); font-size: 0.95rem; }
+        .model-note strong { color: var(--primary); }
+
+        /* ===== ROADMAP ===== */
+        .roadmap { background: var(--bg-white); }
+        .timeline {
+            position: relative;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 100%;
+            background: var(--border-light);
+        }
+        .timeline-item {
+            display: flex;
+            justify-content: flex-end;
+            padding-right: 50%;
+            position: relative;
+            margin-bottom: 3rem;
+        }
+        .timeline-item:nth-child(even) {
+            justify-content: flex-start;
+            padding-right: 0;
+            padding-left: 50%;
+        }
+        .timeline-content {
+            background: var(--bg-cream);
+            padding: 1.5rem 2rem;
+            border-radius: 12px;
+            max-width: 380px;
+            border: 1px solid var(--border-light);
+            position: relative;
+        }
+        .timeline-item:nth-child(odd) .timeline-content::after {
+            content: '';
+            position: absolute;
+            right: -8px; top: 24px;
+            width: 16px; height: 16px;
+            background: var(--bg-cream);
+            border-top: 1px solid var(--border-light);
+            border-right: 1px solid var(--border-light);
+            transform: rotate(45deg);
+        }
+        .timeline-item:nth-child(even) .timeline-content::after {
+            content: '';
+            position: absolute;
+            left: -8px; top: 24px;
+            width: 16px; height: 16px;
+            background: var(--bg-cream);
+            border-bottom: 1px solid var(--border-light);
+            border-left: 1px solid var(--border-light);
+            transform: rotate(45deg);
+        }
+        .timeline-dot {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 16px; height: 16px;
+            background: var(--accent);
+            border-radius: 50%;
+            border: 3px solid var(--bg-white);
+            box-shadow: 0 0 0 3px var(--accent);
+        }
+        .timeline-date {
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: var(--accent);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+        }
+        .timeline-content h3 {
+            font-size: 1.1rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+        .timeline-content p {
+            font-size: 0.9rem;
+            color: var(--text-medium);
+        }
+        .timeline-status {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-top: 0.75rem;
+            padding: 4px 10px;
+            border-radius: 4px;
+        }
+        .status-completed {
+            background: rgba(34,197,94,0.1);
+            color: #16a34a;
+        }
+        .status-progress {
+            background: rgba(251,191,36,0.1);
+            color: #ca8a04;
+        }
+        .status-upcoming {
+            background: rgba(148,163,184,0.1);
+            color: #64748b;
+        }
+
+        /* ===== LEADERSHIP ===== */
+        .leadership { background: var(--bg-cream); }
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+        }
+        .team-card {
+            background: var(--bg-white);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow-soft);
+            border: 1px solid var(--border-light);
+            transition: transform 0.3s;
+        }
+        .team-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-medium);
+        }
+        .team-photo {
+            height: 280px;
+            background: linear-gradient(135deg, #e8e4df 0%, #d4cfc8 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        .team-photo i {
+            font-size: 4rem;
+            color: var(--primary);
+            opacity: 0.2;
+        }
+        .team-info { padding: 1.5rem; }
+        .team-info h3 {
+            font-size: 1.1rem;
+            color: var(--primary);
+            margin-bottom: 4px;
+        }
+        .team-role {
+            font-size: 0.8rem;
+            color: var(--accent);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 0.75rem;
+        }
+        .team-bio {
+            font-size: 0.85rem;
+            color: var(--text-medium);
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+        .team-social {
+            display: flex;
+            gap: 0.75rem;
+        }
+        .team-social a {
+            width: 32px; height: 32px;
+            border-radius: 6px;
+            background: var(--bg-cream);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-light);
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+        .team-social a:hover { background: var(--primary); color: white; }
+
+        /* ===== INVESTORS ===== */
+        .investors { background: var(--bg-white); }
+        .investor-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        .investor-card {
+            background: var(--bg-cream);
+            padding: 2.5rem;
+            border-radius: 12px;
+            text-align: center;
+            border: 1px solid var(--border-light);
+        }
+        .investor-card i {
+            font-size: 2.5rem;
+            color: var(--gold);
+            margin-bottom: 1rem;
+        }
+        .investor-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+        .investor-card p { color: var(--text-medium); font-size: 0.9rem; }
+
+        .unit-economics {
+            background: var(--primary);
+            color: white;
+            padding: 3rem;
+            border-radius: 12px;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            text-align: center;
+        }
+        .unit-econ-item h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+        .unit-econ-item p { color: rgba(255,255,255,0.7); font-size: 0.9rem; }
+
+        .the-ask {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: white;
+            padding: 3rem;
+            border-radius: 12px;
+            text-align: center;
+            margin-top: 3rem;
+        }
+        .the-ask h3 { font-size: 2rem; margin-bottom: 1rem; }
+        .the-ask p {
+            color: rgba(255,255,255,0.8);
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .ask-metrics {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin-bottom: 2rem;
+        }
+        .ask-metric h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+        }
+        .ask-metric p {
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.7);
+        }
+
+        /* ===== CTA SECTION ===== */
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary) 0%, #0f2a35 100%);
+            color: white;
+            text-align: center;
+        }
+        .cta-section h2 { font-size: 2.5rem; margin-bottom: 1rem; }
+        .cta-section p {
+            color: rgba(255,255,255,0.8);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto 2.5rem;
+        }
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        /* ===== FOOTER ===== */
+        .footer {
+            background: #0f1f28;
+            color: rgba(255,255,255,0.7);
+            padding: 4rem 2rem 2rem;
+        }
+        .footer-container { max-width: 1280px; margin: 0 auto; }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1.5fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+        .footer-brand h3 {
+            font-family: 'Playfair Display', serif;
+            color: white;
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+        }
+        .footer-brand p {
+            font-size: 0.9rem;
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+        .footer-brand .tagline { font-style: italic; color: var(--gold); }
+
+        .footer-contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+        }
+        .footer-contact-item i {
+            color: var(--gold);
+            margin-top: 4px;
+            font-size: 0.9rem;
+        }
+        .footer-contact-item a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        .footer-contact-item a:hover { color: white; }
+
+        .footer-links h4 {
+            color: white;
+            font-size: 0.9rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+        }
+        .footer-links ul { list-style: none; }
+        .footer-links li { margin-bottom: 0.75rem; }
+        .footer-links a {
+            color: rgba(255,255,255,0.6);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.2s;
+        }
+        .footer-links a:hover { color: white; }
+
+        .newsletter-form {
+            display: flex;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+        .newsletter-form input {
+            flex: 1;
+            padding: 10px 14px;
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 6px;
+            background: rgba(255,255,255,0.05);
+            color: white;
+            font-size: 0.9rem;
+        }
+        .newsletter-form input::placeholder { color: rgba(255,255,255,0.4); }
+        .newsletter-form button {
+            padding: 10px 18px;
+            background: var(--accent);
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: background 0.2s;
+        }
+        .newsletter-form button:hover { background: var(--accent-dark); }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        .footer-bottom p {
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.5);
+        }
+        .footer-social {
+            display: flex;
+            gap: 1rem;
+        }
+        .footer-social a {
+            width: 36px; height: 36px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.08);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgba(255,255,255,0.6);
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+        .footer-social a:hover { background: var(--accent); color: white; }
+
+        /* ===== MODAL ===== */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0,0,0,0.6);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+            backdrop-filter: blur(4px);
+        }
+        .modal-overlay.active { display: flex; }
+        .modal {
+            background: white;
+            border-radius: 12px;
+            padding: 2.5rem;
+            max-width: 500px;
+            width: 90%;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+            animation: modalIn 0.3s ease;
+        }
+        @keyframes modalIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .modal-close {
+            position: absolute;
+            top: 1rem; right: 1rem;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--text-light);
+            cursor: pointer;
+        }
+        .modal h3 {
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+        .modal p { color: var(--text-medium); margin-bottom: 1.5rem; }
+        .form-group { margin-bottom: 1.25rem; }
+        .form-group label {
+            display: block;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 6px;
+        }
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 10px 14px;
+            border: 1.5px solid var(--border-light);
+            border-radius: 6px;
+            font-size: 0.95rem;
+            font-family: inherit;
+            transition: border-color 0.2s;
+        }
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+        .form-group textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        /* ===== MOBILE MENU ===== */
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 72px; left: 0; right: 0;
+            background: white;
+            border-bottom: 1px solid var(--border-light);
+            padding: 1.5rem 2rem;
+            z-index: 999;
+            box-shadow: var(--shadow-medium);
+        }
+        .mobile-menu.active { display: block; }
+        .mobile-menu a {
+            display: block;
+            padding: 0.75rem 0;
+            color: var(--text-dark);
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px solid var(--border-light);
+        }
+        .mobile-menu a:last-child { border-bottom: none; }
+        .mobile-menu .btn {
+            margin-top: 1rem;
+            width: 100%;
+            justify-content: center;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 1024px) {
+            .hero-container { grid-template-columns: 1fr; text-align: center; }
+            .hero-subtitle { margin-left: auto; margin-right: auto; }
+            .hero-ctas { justify-content: center; }
+            .hero-stats { justify-content: center; }
+            .hero-image { max-width: 600px; margin: 0 auto; }
+            .fleet-grid, .health-pillars, .impact-grid, .team-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .process-steps { grid-template-columns: repeat(2, 1fr); }
+            .process-step:not(:last-child)::after { display: none; }
+            .footer-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links, .nav-cta { display: none; }
+            .mobile-toggle { display: block; }
+            .hero h1 { font-size: 2.5rem; }
+            .crisis-grid, .fleet-grid, .health-pillars, .impact-grid,
+            .team-grid, .model-cards, .investor-grid, .unit-economics {
+                grid-template-columns: 1fr;
+            }
+            .process-steps { grid-template-columns: 1fr; }
+            .timeline::before { left: 20px; }
+            .timeline-item, .timeline-item:nth-child(even) {
+                padding-left: 60px;
+                padding-right: 0;
+                justify-content: flex-start;
+            }
+            .timeline-dot { left: 20px; transform: translateX(-50%); }
+            .timeline-item:nth-child(odd) .timeline-content::after,
+            .timeline-item:nth-child(even) .timeline-content::after {
+                left: -8px; right: auto;
+                border: none;
+                border-bottom: 1px solid var(--border-light);
+                border-left: 1px solid var(--border-light);
+            }
+            .ask-metrics { flex-direction: column; gap: 1.5rem; }
+            .footer-grid { grid-template-columns: 1fr; }
+            .footer-bottom { flex-direction: column; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-plane"></i>
+                </div>
+                <div>
+                    <div class="logo-text">SAHWARA AEROMEDIQ</div>
+                    <span class="logo-sub">Non-Profit Company</span>
+                </div>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#crisis">The Crisis</a></li>
+                <li><a href="#solution">Solution</a></li>
+                <li><a href="#one-health">One Health</a></li>
+                <li><a href="#model">Business Model</a></li>
+                <li><a href="#roadmap">Roadmap</a></li>
+                <li><a href="#team">Team</a></li>
+                <li><a href="#invest">Invest</a></li>
+            </ul>
+            <div class="nav-cta">
+                <a href="#" class="btn btn-outline" onclick="openModal('pilot'); return false;">Request Pilot</a>
+                <a href="#" class="btn btn-primary" onclick="openModal('investor'); return false;">Investor Deck</a>
+            </div>
+            <button class="mobile-toggle" onclick="toggleMobileMenu()">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="#crisis" onclick="toggleMobileMenu()">The Crisis</a>
+        <a href="#solution" onclick="toggleMobileMenu()">Solution</a>
+        <a href="#one-health" onclick="toggleMobileMenu()">One Health</a>
+        <a href="#model" onclick="toggleMobileMenu()">Business Model</a>
+        <a href="#roadmap" onclick="toggleMobileMenu()">Roadmap</a>
+        <a href="#team" onclick="toggleMobileMenu()">Team</a>
+        <a href="#invest" onclick="toggleMobileMenu()">Invest</a>
+        <a href="#" class="btn btn-primary" onclick="openModal('pilot'); toggleMobileMenu(); return false;">Request Pilot Program</a>
+        <a href="#" class="btn btn-outline" onclick="openModal('investor'); toggleMobileMenu(); return false;" style="margin-top:0.5rem;">Investor Deck</a>
+    </div>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <i class="fas fa-circle"></i>
+                    Pre-Launch Stage
+                </div>
+                <h1>Delivering Life <span>Beyond the Road</span></h1>
+                <p class="hero-subtitle">Autonomous aerial medical logistics for rural South Africa. Bridging critical supply chain gaps across human health, animal health, and environmental stewardship.</p>
+                <p class="hero-tagline">"Wings of Hope, Hands of Care"</p>
+                <div class="hero-ctas">
+                    <a href="#" class="btn btn-primary btn-large" onclick="openModal('pilot'); return false;">
+                        <i class="fas fa-rocket"></i>
+                        Request Pilot Program
+                    </a>
+                    <a href="#" class="btn btn-outline btn-large" onclick="openModal('investor'); return false;">
+                        <i class="fas fa-chart-line"></i>
+                        Investor Deck
+                    </a>
+                </div>
+                <div class="hero-stats">
+                    <div class="hero-stat">
+                        <div class="hero-stat-number">1,500+</div>
+                        <div class="hero-stat-label">Rural Health Centres</div>
+                    </div>
+                    <div class="hero-stat">
+                        <div class="hero-stat-number">12.2M</div>
+                        <div class="hero-stat-label">People in KZN Alone</div>
+                    </div>
+                    <div class="hero-stat">
+                        <div class="hero-stat-number">&lt;60min</div>
+                        <div class="hero-stat-label">Target Delivery Time</div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="https://images.unsplash.com/photo-1508614589041-895b8c9d7ef5?w=800&h=600&fit=crop" alt="Aerial view of rural South African landscape with dirt roads and scattered settlements">
+            </div>
+        </div>
+    </section>
+
+    <!-- Trusted By -->
+    <section class="trusted-by">
+        <div class="trusted-by-container">
+            <p class="trusted-by-label">Engagement In Progress With</p>
+            <div class="logos-grid">
+                <div class="logo-item">
+                    <i class="fas fa-hospital"></i>
+                    <span>KZN Dept of Health</span>
+                </div>
+                <div class="logo-item">
+                    <i class="fas fa-seedling"></i>
+                    <span>KZN Agriculture & Rural Dev</span>
+                </div>
+                <div class="logo-item">
+                    <i class="fas fa-plane-departure"></i>
+                    <span>SACAA</span>
+                </div>
+                <div class="logo-item">
+                    <i class="fas fa-heart-pulse"></i>
+                    <span>One Health SA Network</span>
+                </div>
+                <div class="logo-item">
+                    <i class="fas fa-graduation-cap"></i>
+                    <span>University of Pretoria</span>
+                </div>
+                <div class="logo-item">
+                    <i class="fas fa-hand-holding-heart"></i>
+                    <span>MSF Southern Africa</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Crisis -->
+    <section class="crisis" id="crisis">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-label">The Crisis</span>
+                <h2>Geography Should Not Dictate Survival</h2>
+                <p>In KwaZulu-Natal, 68% of roads are unpaved, potholed, and flood-prone. The physical backbone of rural healthcare is crumbling with devastating consequences.</p>
+            </div>
+            <div class="crisis-grid">
+                <div class="crisis-card">
+                    <div class="crisis-icon">
+                        <i class="fas fa-road"></i>
+                    </div>
+                    <h3>72+ Hours</h3>
+                    <p>Routine delays for essential medicine restocking due to broken infrastructure and seasonal flooding</p>
+                </div>
+                <div class="crisis-card">
+                    <div class="crisis-icon">
+                        <i class="fas fa-cow"></i>
+                    </div>
+                    <h3>55%</h3>
+                    <p>Of livestock face vaccine and antibiotic shortages because veterinary posts are disconnected from supply depots</p>
+                </div>
+                <div class="crisis-card">
+                    <div class="crisis-icon">
+                        <i class="fas fa-triangle-exclamation"></i>
+                    </div>
+                    <h3>Blind</h3>
+                    <p>Disease surveillance is ineffective outbreaks are detected weeks too late, allowing zoonotic diseases to spread unchecked</p>
+                </div>
+            </div>
+            <p class="crisis-source">Sources: Statistics South Africa (2025); KZN Dept of Agriculture & Rural Development (2024); Eyewitness News (2025); GroundUp (2025)</p>
+        </div>
+    </section>
+
+    <!-- Solution -->
+    <section class="solution" id="solution">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-label">Our Solution</span>
+                <h2>Integrated One Health Logistics</h2>
+                <p>Medical-grade unmanned aerial vehicles bypassing broken infrastructure to reach communities no truck can serve in time.</p>
+            </div>
+            <div class="fleet-grid">
+                <div class="fleet-card">
+                    <div class="fleet-image">
+                        <i class="fas fa-truck-medical"></i>
+                        <span class="fleet-badge">SA-1</span>
+                    </div>
+                    <div class="fleet-content">
+                        <h3>MedEvac Delivery</h3>
+                        <p>Emergency and routine medicines, vaccines, contraceptives, and chronic medication delivery to clinics and pharmacies.</p>
+                        <div class="fleet-specs">
+                            <div class="fleet-spec">
+                                <div class="fleet-spec-value">120 km</div>
+                                <div class="fleet-spec-label">Range</div>
+                            </div>
+                            <div class="fleet-spec">
+                                <div class="fleet-spec-value">&lt;60 min</div>
+                                <div class="fleet-spec-label">Delivery</div>
+                            </div>
+                            <div class="fleet-spec">
+                                <div class="fleet-spec-value">5 kg</div>
+                                <div class="fleet-spec-label">Payload</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="fleet-card">
+                    <div class="fleet-image">
+                        <i class="fas fa-vial"></i>
+                        <span class="fleet-badge">SA-2</span>
+                    </div>
+                    <div class="fleet-content">
+                        <h3>Diagnostic Transport</h3>
+                        <p>Blood, DNA, and pathology specimens flown to centralized laboratories with full chain-of-custody documentation.</p>
+                        <div class="fleet-specs">
+                            <div class="fleet-spec">
+                                <div class="fleet-spec-value">2-8C</div>
+                                <div class="fleet-spec-label">Cold Chain</div>
+                            </div>
+                            <div class="fleet-spec">
+                                <div class="fleet-spec-value">Real-time</div>
+                                <div class="fleet-spec-label">Tracking</div>
+                            </div>
+                            <div class="fleet-spec">
+                                <div class="fleet-spec-value">ISO 27001</div>
+                                <div class="fleet-spec-label">Compliance</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="fleet-card">
+                    <div class="fleet-image">
+                        <i class="fas fa-syringe"></i>
+                        <span class="fleet-badge">SA-3</span>
+                    </div>
+                    <div class="fleet-content">
+                        <h3>Veterinary Distribution</h3>
+                        <p>Cold-chain livestock vaccines, antibiotics, and reproductive health products for veterinary posts and farmers.</p>
+                        <div class="fleet-specs">
+                            <div class="fleet-spec">
+                                <div class="fleet-spec-value">-20C</div>
+                                <div class="fleet-spec-label">Deep Freeze</div>
+                            </div>
+                            <div class="fleet-spec">
+                                <div class="fleet-spec-value">Multi-stop</div>
+                                <div class="fleet-spec-label">Routing</div>
+                            </div>
+                            <div class="fleet-spec">
+                                <div class="fleet-spec-value">&lt;2 min</div>
+                                <div class="fleet-spec-label">Deploy</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process -->
+    <section class="process">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-label">How It Works</span>
+                <h2>From Request to Delivery in Minutes</h2>
+                <p>A seamless six-step process designed for rural healthcare workers with minimal technical literacy requirements.</p>
+            </div>
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="process-number">01</div>
+                    <h3>Request</h3>
+                    <p>Clinic or veterinary post submits request via SMS, app, or dedicated hotline</p>
+                </div>
+                <div class="process-step">
+                    <div class="process-number">02</div>
+                    <h3>Dispatch</h3>
+                    <p>AI platform optimizes route, consolidates multi-sector payloads, assigns nearest drone</p>
+                </div>
+                <div class="process-step">
+                    <div class="process-number">03</div>
+                    <h3>Flight</h3>
+                    <p>Medical-grade UAV bypasses terrain and weather barriers autonomously</p>
+                </div>
+                <div class="process-step">
+                    <div class="process-number">04</div>
+                    <h3>Delivery</h3>
+                    <p>Precision landing at designated zone with real-time tracking throughout</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- One Health -->
+    <section class="one-health" id="one-health">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-label">Our Approach</span>
+                <h2>True One Health Integration</h2>
+                <p>The only drone logistics operator in South Africa integrating human, animal, and environmental health vertically not a health-only or logistics-only play.</p>
+            </div>
+            <div class="health-pillars">
+                <div class="health-pillar">
+                    <div class="health-pillar-icon">
+                        <i class="fas fa-user-doctor"></i>
+                    </div>
+                    <h3>Human Health</h3>
+                    <p>Emergency medicines, vaccines, contraceptives, chronic medication, and maternal health supplies.</p>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Clinic stockout elimination</li>
+                        <li><i class="fas fa-check"></i> Emergency response under 45 min</li>
+                        <li><i class="fas fa-check"></i> Diagnostic sample integrity</li>
+                        <li><i class="fas fa-check"></i> Maternal referral completion</li>
+                    </ul>
+                </div>
+                <div class="health-pillar">
+                    <div class="health-pillar-icon">
+                        <i class="fas fa-cow"></i>
+                    </div>
+                    <h3>Animal Health</h3>
+                    <p>Livestock vaccines, antibiotics, reproductive health products, and zoonotic disease response.</p>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Veterinary supply delivery</li>
+                        <li><i class="fas fa-check"></i> Zoonotic surveillance samples</li>
+                        <li><i class="fas fa-check"></i> Livestock vaccine coverage</li>
+                        <li><i class="fas fa-check"></i> Food security protection</li>
+                    </ul>
+                </div>
+                <div class="health-pillar">
+                    <div class="health-pillar-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h3>Environmental Health</h3>
+                    <p>Climate-resilient logistics reducing carbon footprint and preserving rural ecosystems.</p>
+                    <ul>
+                        <li><i class="fas fa-check"></i> 60% CO2 reduction vs road</li>
+                        <li><i class="fas fa-check"></i> Road degradation avoided</li>
+                        <li><i class="fas fa-check"></i> Deforestation prevention</li>
+                        <li><i class="fas fa-check"></i> Climate resilience aligned</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Impact -->
+    <section class="impact">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-label">Measurable Impact</span>
+                <h2>Targets for 2028</h2>
+                <p>Explicit baselines and targets across five dimensions, integrated with DHIS2 and laboratory information systems.</p>
+            </div>
+            <div class="impact-grid">
+                <div class="impact-card">
+                    <i class="fas fa-clock"></i>
+                    <h3>&le;3 Days</h3>
+                    <p>Critical medicine stockout days per clinic per month (from 8 days baseline)</p>
+                </div>
+                <div class="impact-card">
+                    <i class="fas fa-truck-fast"></i>
+                    <h3>&le;45 Min</h3>
+                    <p>Emergency response time from rural clinic to hospital (from 4-6 hours)</p>
+                </div>
+                <div class="impact-card">
+                    <i class="fas fa-shield-dog"></i>
+                    <h3>&ge;80%</h3>
+                    <p>Livestock vaccine coverage in partner districts (from 45% baseline)</p>
+                </div>
+                <div class="impact-card">
+                    <i class="fas fa-users"></i>
+                    <h3>45 Jobs</h3>
+                    <p>Direct and indirect local jobs created through community-based operations</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Business Model -->
+    <section class="business-model" id="model">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-label">Revenue Model</span>
+                <h2>Sustainable Hybrid Approach</h2>
+                <p>Starting B2B to build trust and operational proof, then transitioning into B2G contracts for scale and systemic integration.</p>
+            </div>
+            <div class="model-cards">
+                <div class="model-card">
+                    <div class="model-card-header">
+                        <i class="fas fa-building"></i>
+                        <h3>B2B Private Sector</h3>
+                    </div>
+                    <p>Private clinics, pharmacies, veterinary practices, and agribusinesses pay premium rates for reliable delivery. Generates cash flow stability and operational validation.</p>
+                    <div class="model-metrics">
+                        <div class="model-metric">
+                            <div class="model-metric-value">$120</div>
+                            <div class="model-metric-label">Revenue per order</div>
+                        </div>
+                        <div class="model-metric">
+                            <div class="model-metric-value">25%</div>
+                            <div class="model-metric-label">Operating surplus</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="model-card">
+                    <div class="model-card-header">
+                        <i class="fas fa-landmark"></i>
+                        <h3>B2G Public Sector</h3>
+                    </div>
+                    <p>Provincial Health, Agriculture, and Environmental Affairs departments plus NGOs. Provides scale, 3-year contract security, and volume commitments of 500+ orders monthly.</p>
+                    <div class="model-metrics">
+                        <div class="model-metric">
+                            <div class="model-metric-value">$85</div>
+                            <div class="model-metric-label">Revenue per order</div>
+                        </div>
+                        <div class="model-metric">
+                            <div class="model-metric-value">12%</div>
+                            <div class="model-metric-label">Operating surplus</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="model-note">
+                <p><strong>NPC Structure Advantage:</strong> As a South African Non-Profit Company, every financial surplus is reinvested into expanding access not distributed to shareholders. This alignment builds trust with government partners and qualifies us for blended finance instruments unavailable to for-profit competitors.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Roadmap -->
+    <section class="roadmap" id="roadmap">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-label">Our Journey</span>
+                <h2>Strategic Roadmap</h2>
+                <p>From pilot to provincial scale a phased approach with clear milestones and capital requirements.</p>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">Q1 2026</div>
+                        <h3>SACAA Permit Application</h3>
+                        <p>Pre-application engagement commenced with South African Civil Aviation Authority. Ex-SACAA regulatory advisor retained.</p>
+                        <span class="timeline-status status-completed"><i class="fas fa-check"></i> Completed</span>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">Q2 2026</div>
+                        <h3>Pilot Partnership Signed</h3>
+                        <p>Memorandum of Intent executed with KZN Health Department for uThukela District pilot site identification.</p>
+                        <span class="timeline-status status-progress"><i class="fas fa-spinner"></i> In Progress</span>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">Q3-Q4 2026</div>
+                        <h3>Pilot Operations</h3>
+                        <p>1,000 deliveries in uThukela District; 10 clinic/vet partnerships; Human + animal health integration proven; Community liaison program complete.</p>
+                        <span class="timeline-status status-upcoming"><i class="fas fa-calendar"></i> Upcoming</span>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">2027</div>
+                        <h3>Regional Expansion</h3>
+                        <p>Provincial Health & Agriculture MOUs; Zoonotic rapid-response capability; 5,000 deliveries; 15 direct jobs created.</p>
+                        <span class="timeline-status status-upcoming"><i class="fas fa-calendar"></i> Upcoming</span>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">2028</div>
+                        <h3>Provincial Scale</h3>
+                        <p>Break-even (July); Surveillance network covering 50+ facilities; $3.5M revenue; 25,000 deliveries; 45 total jobs.</p>
+                        <span class="timeline-status status-upcoming"><i class="fas fa-calendar"></i> Upcoming</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Leadership -->
+    <section class="leadership" id="team">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-label">Leadership</span>
+                <h2>The Team Behind the Mission</h2>
+                <p>Four founders with deep expertise across aviation, engineering, medicine, and social impact committed to rural health equity.</p>
+            </div>
+            <div class="team-grid">
+                <div class="team-card">
+                    <div class="team-photo">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="team-info">
+                        <h3>Godfrey C. Muyambi</h3>
+                        <div class="team-role">Director of Investments</div>
+                        <p class="team-bio">Vision and strategy; government relations; partnership development; operational oversight. Deep commitment to rural health equity and One Health integration.</p>
+                        <div class="team-social">
+                            <a href="https://www.linkedin.com/in/godfrey-chitsauko-muyambi-phd-2b1b70106/" target="_blank" rel="noopener noreferrer" aria-label="Godfrey Muyambi LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="mailto:muyambigodfrey@gmail.com" aria-label="Email Godfrey Muyambi"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="team-card">
+                    <div class="team-photo">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="team-info">
+                        <h3>Lister M. Dzikiti</h3>
+                        <div class="team-role">Director of Operations</div>
+                        <p class="team-bio">UAV fleet management; logistics optimization; SACAA compliance; former aviation and medical logistics operations background.</p>
+                        <div class="team-social">
+                            <a href="https://www.linkedin.com/in/lister-munodawafa-dzikiti-7150b57a/" target="_blank" rel="noopener noreferrer" aria-label="Lister Dzikiti LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="mailto:listerdz@yahoo.com" aria-label="Email Lister Dzikiti"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="team-card">
+                    <div class="team-photo">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="team-info">
+                        <h3>Caroline Shihlabane</h3>
+                        <div class="team-role">Chief Technology Officer</div>
+                        <p class="team-bio">AI platform development; data systems architecture; cold-chain integration; health informatics expertise.</p>
+                        <div class="team-social">
+                            <a href="#" aria-label="Caroline Shihlabane LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" aria-label="Email Caroline Shihlabane"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="team-card">
+                    <div class="team-photo">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="team-info">
+                        <h3>Orapeleng M. Semakane</h3>
+                        <div class="team-role">Veterinary & One Health Advisor</div>
+                        <p class="team-bio">SA Veterinary Council registered; zoonotic disease expertise; agricultural stakeholder engagement; rural development background.</p>
+                        <div class="team-social">
+                            <a href="#" aria-label="Orapeleng Semakane LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" aria-label="Email Orapeleng Semakane"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Investors -->
+    <section class="investors" id="invest">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-label">For Investors</span>
+                <h2>The Opportunity</h2>
+                <p>A $12B market growing at 34% CAGR. Proven unit economics in comparable African contexts. Clear path to scale.</p>
+            </div>
+            <div class="investor-grid">
+                <div class="investor-card">
+                    <i class="fas fa-globe-africa"></i>
+                    <h3>$12B</h3>
+                    <p>Total Addressable Market for medical drone logistics in Sub-Saharan Africa</p>
+                </div>
+                <div class="investor-card">
+                    <i class="fas fa-bullseye"></i>
+                    <h3>$2.4B</h3>
+                    <p>Serviceable Available Market in Southern Africa over next decade</p>
+                </div>
+                <div class="investor-card">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>34%</h3>
+                    <p>Compound Annual Growth Rate in African medical UAV logistics sector</p>
+                </div>
+            </div>
+            <div class="unit-economics">
+                <div class="unit-econ-item">
+                    <h4>$47</h4>
+                    <p>Cost per delivery</p>
+                </div>
+                <div class="unit-econ-item">
+                    <h4>$120</h4>
+                    <p>Revenue per delivery (B2B)</p>
+                </div>
+                <div class="unit-econ-item">
+                    <h4>61%</h4>
+                    <p>Gross margin</p>
+                </div>
+                <div class="unit-econ-item">
+                    <h4>18 mo</h4>
+                    <p>Payback period</p>
+                </div>
+            </div>
+            <div class="the-ask">
+                <h3>Series A: $3.5M</h3>
+                <p>Funding 12 distribution hubs across KwaZulu-Natal, impacting 50,000 lives in the first 24 months of operations.</p>
+                <div class="ask-metrics">
+                    <div class="ask-metric">
+                        <h4>12</h4>
+                        <p>Distribution Hubs</p>
+                    </div>
+                    <div class="ask-metric">
+                        <h4>50,000</h4>
+                        <p>Lives Impacted</p>
+                    </div>
+                    <div class="ask-metric">
+                        <h4>2028</h4>
+                        <p>Break-even Target</p>
+                    </div>
+                </div>
+                <a href="#" class="btn btn-gold btn-large" onclick="openModal('investor'); return false;">
+                    <i class="fas fa-file-pdf"></i>
+                    Request Investor Deck
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="section-container">
+            <h2>Ready to Join the Mission?</h2>
+            <p>Whether you are a healthcare facility, investor, or development partner there is a role for you in redefining rural healthcare access in South Africa.</p>
+            <div class="cta-buttons">
+                <a href="#" class="btn btn-white btn-large" onclick="openModal('pilot'); return false;">
+                    <i class="fas fa-rocket"></i>
+                    Request Pilot Program
+                </a>
+                <a href="#" class="btn btn-outline-white btn-large" onclick="openModal('investor'); return false;">
+                    <i class="fas fa-chart-line"></i>
+                    Investor Deck
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3>SAHWARA AEROMEDIQ NPC</h3>
+                    <p class="tagline">"Wings of Hope, Hands of Care"</p>
+                    <p>A South African registered Non-Profit Company pioneering integrated One Health logistics for underserved rural communities through autonomous aerial medical delivery.</p>
+                    <div class="footer-contact-item">
+                        <i class="fas fa-location-dot"></i>
+                        <span>Block 1, 219 Han View, Maubane, South Africa</span>
+                    </div>
+                    <div class="footer-contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <a href="mailto:muyambigodfrey@gmail.com">muyambigodfrey@gmail.com</a>
+                    </div>
+                    <div class="footer-contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>+27 83 599 8930</span>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#crisis">The Crisis</a></li>
+                        <li><a href="#solution">Our Solution</a></li>
+                        <li><a href="#one-health">One Health</a></li>
+                        <li><a href="#model">Business Model</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="#roadmap">Roadmap</a></li>
+                        <li><a href="#team">Leadership</a></li>
+                        <li><a href="#invest">Investor Info</a></li>
+                        <li><a href="#" onclick="openModal('pilot'); return false;">Pilot Program</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Stay Updated</h4>
+                    <p style="font-size:0.9rem; color:rgba(255,255,255,0.6); margin-bottom:1rem;">Subscribe for updates on our pilot launch and partnership opportunities.</p>
+                    <form class="newsletter-form" onsubmit="handleNewsletter(event)">
+                        <input type="email" placeholder="Your email address" required>
+                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>SAHWARA AEROMEDIQ NPC. All rights reserved. 2026.</p>
+                <div class="footer-social">
+                    <a href="https://www.linkedin.com/in/godfrey-chitsauko-muyambi-phd-2b1b70106/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="mailto:muyambigodfrey@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modals -->
+    <div class="modal-overlay" id="modalOverlay">
+        <!-- Pilot Modal -->
+        <div class="modal" id="pilotModal" style="display:none;">
+            <button class="modal-close" onclick="closeModal()">&times;</button>
+            <h3>Request Pilot Program</h3>
+            <p>Join our pre-launch pilot in uThukela District, KwaZulu-Natal. Limited partnerships available for clinics, pharmacies, and veterinary posts.</p>
+            <form onsubmit="handleFormSubmit(event, 'pilot')">
+                <div class="form-group">
+                    <label>Full Name</label>
+                    <input type="text" placeholder="Dr. Jane Smith" required>
+                </div>
+                <div class="form-group">
+                    <label>Organisation</label>
+                    <input type="text" placeholder="Rural Health Clinic / Veterinary Post" required>
+                </div>
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" placeholder="contact@organisation.co.za" required>
+                </div>
+                <div class="form-group">
+                    <label>Phone</label>
+                    <input type="tel" placeholder="+27 __ ___ ____">
+                </div>
+                <div class="form-group">
+                    <label>Organisation Type</label>
+                    <select required>
+                        <option value="">Select type...</option>
+                        <option value="clinic">Public Health Clinic</option>
+                        <option value="pharmacy">Private Pharmacy</option>
+                        <option value="vet">Veterinary Post</option>
+                        <option value="ngo">NGO / Development Partner</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Message (Optional)</label>
+                    <textarea placeholder="Tell us about your facility and supply chain challenges..."></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width:100%; justify-content:center;">
+                    <i class="fas fa-paper-plane"></i>
+                    Submit Request
+                </button>
+            </form>
+        </div>
+
+        <!-- Investor Modal -->
+        <div class="modal" id="investorModal" style="display:none;">
+            <button class="modal-close" onclick="closeModal()">&times;</button>
+            <h3>Request Investor Deck</h3>
+            <p>Access our comprehensive investment memorandum including financial projections, unit economics, risk analysis, and impact framework.</p>
+            <form onsubmit="handleFormSubmit(event, 'investor')">
+                <div class="form-group">
+                    <label>Full Name</label>
+                    <input type="text" placeholder="Your name" required>
+                </div>
+                <div class="form-group">
+                    <label>Organisation</label>
+                    <input type="text" placeholder="Investment fund / Organisation" required>
+                </div>
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" placeholder="investor@fund.com" required>
+                </div>
+                <div class="form-group">
+                    <label>Phone</label>
+                    <input type="tel" placeholder="+27 __ ___ ____">
+                </div>
+                <div class="form-group">
+                    <label>Investor Type</label>
+                    <select required>
+                        <option value="">Select type...</option>
+                        <option value="vc">Venture Capital</option>
+                        <option value="impact">Impact Investor</option>
+                        <option value="angel">Angel Investor</option>
+                        <option value="pe">Private Equity</option>
+                        <option value="family">Family Office</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Message (Optional)</label>
+                    <textarea placeholder="Tell us about your investment focus and interest in Sahwara..."></textarea>
+                </div>
+                <button type="submit" class="btn btn-gold" style="width:100%; justify-content:center;">
+                    <i class="fas fa-file-pdf"></i>
+                    Request Deck
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('active');
+        }
+
+        // Modal functions
+        function openModal(type) {
+            const overlay = document.getElementById('modalOverlay');
+            const pilotModal = document.getElementById('pilotModal');
+            const investorModal = document.getElementById('investorModal');
+
+            overlay.classList.add('active');
+
+            if (type === 'pilot') {
+                pilotModal.style.display = 'block';
+                investorModal.style.display = 'none';
+            } else {
+                pilotModal.style.display = 'none';
+                investorModal.style.display = 'block';
+            }
+
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            const overlay = document.getElementById('modalOverlay');
+            overlay.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        // Close modal on overlay click
+        document.getElementById('modalOverlay').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeModal();
+            }
+        });
+
+        // Close modal on Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeModal();
+            }
+        });
+
+        // Form submission handler
+        function handleFormSubmit(event, type) {
+            event.preventDefault();
+            const form = event.target;
+
+            // Simulate form submission
+            const btn = form.querySelector('button[type="submit"]');
+            const originalText = btn.innerHTML;
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+            btn.disabled = true;
+
+            setTimeout(function() {
+                btn.innerHTML = '<i class="fas fa-check"></i> Request Submitted!';
+                btn.style.background = '#16a34a';
+                btn.style.borderColor = '#16a34a';
+
+                setTimeout(function() {
+                    closeModal();
+                    form.reset();
+                    btn.innerHTML = originalText;
+                    btn.disabled = false;
+                    btn.style.background = '';
+                    btn.style.borderColor = '';
+                }, 1500);
+            }, 1500);
+        }
+
+        // Newsletter handler
+        function handleNewsletter(event) {
+            event.preventDefault();
+            const form = event.target;
+            const btn = form.querySelector('button');
+            const originalIcon = btn.innerHTML;
+
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i>';
+
+            setTimeout(function() {
+                btn.innerHTML = '<i class="fas fa-check"></i>';
+                btn.style.background = '#16a34a';
+
+                setTimeout(function() {
+                    form.reset();
+                    btn.innerHTML = originalIcon;
+                    btn.style.background = '';
+                }, 1500);
+            }, 1000);
+        }
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                if (href !== '#') {
+                    e.preventDefault();
+                    const target = document.querySelector(href);
+                    if (target) {
+                        const offset = 80;
+                        const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - offset;
+                        window.scrollTo({
+                            top: targetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
