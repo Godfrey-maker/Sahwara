@@ -2,11 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="SAHWARA AEROMEDIQ NPC - Autonomous aerial medical logistics for underserved rural communities in South Africa. One Health drone delivery integrating human health, animal health, and environmental stewardship.">
-    <meta name="keywords" content="medical drone delivery, rural healthcare, One Health, KwaZulu-Natal, UAV logistics, South Africa">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <meta name="description" content="SAHWARA AEROMEDIQ NPC (Reg: K2026371011) - Autonomous aerial medical logistics for underserved rural communities in South Africa. One Health drone delivery integrating human health, animal health, and environmental stewardship.">
+    <meta name="keywords" content="medical drone delivery, rural healthcare, One Health, KwaZulu-Natal, UAV logistics, South Africa, NPO, NPC">
     <meta property="og:title" content="SAHWARA AEROMEDIQ NPC | Wings of Hope, Hands of Care">
-    <meta property="og:description" content="Integrated One Health drone logistics for rural South Africa. Medical supplies, vaccines, and diagnostic samples delivered by autonomous aerial vehicles.">
+    <meta property="og:description" content="Integrated One Health drone logistics for rural South Africa. Registered Non-Profit Company K2026371011.">
     <meta property="og:type" content="website">
     <title>SAHWARA AEROMEDIQ NPC | Wings of Hope, Hands of Care</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -28,10 +28,11 @@
             --border-light: #e8e4df;
             --shadow-soft: 0 4px 24px rgba(0,0,0,0.06);
             --shadow-medium: 0 8px 32px rgba(0,0,0,0.1);
+            --tap-target: 44px;
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        html { scroll-behavior: smooth; }
+        * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+        html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
 
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -39,6 +40,7 @@
             background: var(--bg-white);
             line-height: 1.7;
             overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
         }
 
         h1, h2, h3, h4 {
@@ -54,6 +56,7 @@
             z-index: 1000;
             background: rgba(255,255,255,0.95);
             backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
             border-bottom: 1px solid var(--border-light);
             transition: all 0.3s ease;
         }
@@ -62,41 +65,43 @@
         .nav-container {
             max-width: 1280px;
             margin: 0 auto;
-            padding: 0 2rem;
+            padding: 0 1.5rem;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            height: 72px;
+            height: 64px;
         }
 
         .logo {
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 10px;
             text-decoration: none;
+            min-height: var(--tap-target);
         }
         .logo-icon {
-            width: 40px; height: 40px;
+            width: 36px; height: 36px;
             background: var(--primary);
             border-radius: 8px;
             display: flex;
             align-items: center;
             justify-content: center;
             color: white;
-            font-size: 18px;
+            font-size: 16px;
+            flex-shrink: 0;
         }
         .logo-text {
             font-family: 'Playfair Display', serif;
-            font-size: 1.1rem;
+            font-size: 1rem;
             font-weight: 700;
             color: var(--primary);
             letter-spacing: 0.5px;
         }
         .logo-sub {
-            font-size: 0.65rem;
+            font-size: 0.6rem;
             color: var(--text-light);
             font-weight: 500;
-            letter-spacing: 1.5px;
+            letter-spacing: 1.2px;
             text-transform: uppercase;
             display: block;
             margin-top: -2px;
@@ -104,33 +109,37 @@
 
         .nav-links {
             display: flex;
-            gap: 2.5rem;
+            gap: 2rem;
             list-style: none;
         }
         .nav-links a {
             text-decoration: none;
             color: var(--text-medium);
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             font-weight: 500;
             transition: color 0.2s;
             position: relative;
+            min-height: var(--tap-target);
+            display: flex;
+            align-items: center;
         }
         .nav-links a:hover { color: var(--primary); }
         .nav-links a::after {
             content: '';
             position: absolute;
-            bottom: -4px; left: 0;
+            bottom: 8px;
+            left: 0;
             width: 0; height: 2px;
             background: var(--accent);
             transition: width 0.3s;
         }
         .nav-links a:hover::after { width: 100%; }
 
-        .nav-cta { display: flex; gap: 1rem; }
+        .nav-cta { display: flex; gap: 0.75rem; }
 
         .btn {
-            padding: 10px 24px;
-            border-radius: 6px;
+            padding: 10px 20px;
+            border-radius: 8px;
             font-size: 0.85rem;
             font-weight: 600;
             text-decoration: none;
@@ -139,8 +148,12 @@
             border: none;
             display: inline-flex;
             align-items: center;
+            justify-content: center;
             gap: 8px;
+            min-height: var(--tap-target);
+            touch-action: manipulation;
         }
+        .btn:active { transform: scale(0.97); }
         .btn-outline {
             color: var(--primary);
             border: 1.5px solid var(--primary);
@@ -168,7 +181,7 @@
             border-color: #9a6d08;
             transform: translateY(-1px);
         }
-        .btn-large { padding: 14px 32px; font-size: 0.95rem; }
+        .btn-large { padding: 14px 28px; font-size: 0.95rem; }
         .btn-white {
             background: white;
             color: var(--primary);
@@ -192,15 +205,18 @@
             font-size: 1.5rem;
             color: var(--primary);
             cursor: pointer;
+            min-height: var(--tap-target);
+            min-width: var(--tap-target);
+            padding: 8px;
         }
 
-        /* ===== HERO ===== */
+        /* ===== HERO - FUNDRAISING FOCUSED ===== */
         .hero {
             min-height: 100vh;
             display: flex;
             align-items: center;
             background: linear-gradient(135deg, var(--bg-cream) 0%, #f0ebe4 100%);
-            padding-top: 72px;
+            padding-top: 64px;
             position: relative;
             overflow: hidden;
         }
@@ -216,10 +232,10 @@
         .hero-container {
             max-width: 1280px;
             margin: 0 auto;
-            padding: 4rem 2rem;
+            padding: 3rem 1.5rem;
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 4rem;
+            gap: 3rem;
             align-items: center;
         }
 
@@ -231,33 +247,58 @@
             color: var(--accent);
             padding: 8px 16px;
             border-radius: 100px;
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             font-weight: 600;
             letter-spacing: 0.5px;
             text-transform: uppercase;
             margin-bottom: 1.5rem;
         }
-        .hero-badge i { font-size: 0.7rem; }
 
         .hero h1 {
-            font-size: 3.5rem;
+            font-size: 3.2rem;
             color: var(--primary);
             margin-bottom: 1.5rem;
         }
         .hero h1 span { color: var(--accent); }
 
-        .hero-subtitle {
-            font-size: 1.25rem;
-            color: var(--text-medium);
-            margin-bottom: 2rem;
-            max-width: 540px;
+        .hero-fundraise {
+            background: var(--bg-white);
+            border: 1px solid var(--border-light);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: var(--shadow-soft);
         }
+        .hero-fundraise-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            padding: 10px 0;
+            border-bottom: 1px solid var(--border-light);
+        }
+        .hero-fundraise-item:last-child { border-bottom: none; }
+        .hero-fundraise-item i {
+            color: var(--accent);
+            font-size: 1.2rem;
+            margin-top: 2px;
+            flex-shrink: 0;
+        }
+        .hero-fundraise-item strong {
+            color: var(--primary);
+            display: block;
+            font-size: 0.95rem;
+        }
+        .hero-fundraise-item span {
+            color: var(--text-medium);
+            font-size: 0.9rem;
+        }
+
         .hero-tagline {
             font-family: 'Playfair Display', serif;
             font-style: italic;
             font-size: 1.1rem;
             color: var(--gold);
-            margin-bottom: 2.5rem;
+            margin-bottom: 2rem;
         }
         .hero-ctas { display: flex; gap: 1rem; flex-wrap: wrap; }
 
@@ -270,7 +311,7 @@
         .hero-image::after {
             content: '';
             position: absolute;
-            bottom: -20px; right: -20px;
+            bottom: -16px; right: -16px;
             width: 100%; height: 100%;
             border: 2px solid var(--gold);
             border-radius: 12px;
@@ -279,20 +320,20 @@
 
         .hero-stats {
             display: flex;
-            gap: 2.5rem;
-            margin-top: 3rem;
-            padding-top: 2rem;
+            gap: 2rem;
+            margin-top: 2.5rem;
+            padding-top: 1.5rem;
             border-top: 1px solid var(--border-light);
         }
         .hero-stat { text-align: left; }
         .hero-stat-number {
             font-family: 'Playfair Display', serif;
-            font-size: 2rem;
+            font-size: 1.8rem;
             font-weight: 700;
             color: var(--primary);
         }
         .hero-stat-label {
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             color: var(--text-light);
             text-transform: uppercase;
             letter-spacing: 0.5px;
@@ -300,42 +341,42 @@
         }
 
         /* ===== SECTIONS COMMON ===== */
-        section { padding: 6rem 2rem; }
+        section { padding: 5rem 1.5rem; }
         .section-container { max-width: 1280px; margin: 0 auto; }
         .section-header {
             text-align: center;
             max-width: 700px;
-            margin: 0 auto 4rem;
+            margin: 0 auto 3rem;
         }
         .section-label {
             display: inline-block;
             color: var(--accent);
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             font-weight: 600;
             letter-spacing: 2px;
             text-transform: uppercase;
             margin-bottom: 1rem;
         }
         .section-header h2 {
-            font-size: 2.5rem;
+            font-size: 2.2rem;
             color: var(--primary);
             margin-bottom: 1rem;
         }
         .section-header p {
             color: var(--text-medium);
-            font-size: 1.1rem;
+            font-size: 1.05rem;
         }
 
         /* ===== TRUSTED BY ===== */
         .trusted-by {
             background: var(--bg-white);
-            padding: 3rem 2rem;
+            padding: 2.5rem 1.5rem;
             border-top: 1px solid var(--border-light);
             border-bottom: 1px solid var(--border-light);
         }
         .trusted-by-container { max-width: 1280px; margin: 0 auto; text-align: center; }
         .trusted-by-label {
-            font-size: 0.75rem;
+            font-size: 0.7rem;
             font-weight: 600;
             letter-spacing: 2px;
             text-transform: uppercase;
@@ -346,32 +387,33 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: 3rem;
+            gap: 2.5rem;
             flex-wrap: wrap;
         }
         .logo-item {
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 8px;
             color: var(--text-light);
             font-weight: 600;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             opacity: 0.6;
             transition: opacity 0.3s;
+            min-height: var(--tap-target);
         }
         .logo-item:hover { opacity: 1; }
-        .logo-item i { font-size: 1.5rem; }
+        .logo-item i { font-size: 1.3rem; }
 
         /* ===== CRISIS ===== */
         .crisis { background: var(--bg-cream); }
         .crisis-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
+            gap: 1.5rem;
         }
         .crisis-card {
             background: var(--bg-white);
-            padding: 2.5rem;
+            padding: 2rem;
             border-radius: 12px;
             box-shadow: var(--shadow-soft);
             text-align: center;
@@ -382,26 +424,26 @@
             box-shadow: var(--shadow-medium);
         }
         .crisis-icon {
-            width: 64px; height: 64px;
+            width: 56px; height: 56px;
             background: rgba(196,30,58,0.08);
-            border-radius: 16px;
+            border-radius: 14px;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto 1.5rem;
+            margin: 0 auto 1.25rem;
             color: var(--accent);
-            font-size: 1.5rem;
+            font-size: 1.3rem;
         }
         .crisis-card h3 {
-            font-size: 2rem;
+            font-size: 1.8rem;
             color: var(--accent);
             margin-bottom: 0.5rem;
         }
-        .crisis-card p { color: var(--text-medium); font-size: 0.95rem; }
+        .crisis-card p { color: var(--text-medium); font-size: 0.9rem; }
         .crisis-source {
             text-align: center;
             margin-top: 2rem;
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             color: var(--text-light);
             font-style: italic;
         }
@@ -411,7 +453,7 @@
         .fleet-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
+            gap: 1.5rem;
         }
         .fleet-card {
             background: var(--bg-cream);
@@ -425,7 +467,7 @@
             box-shadow: var(--shadow-medium);
         }
         .fleet-image {
-            height: 220px;
+            height: 200px;
             background: linear-gradient(135deg, #e8e4df 0%, #d4cfc8 100%);
             display: flex;
             align-items: center;
@@ -433,47 +475,47 @@
             position: relative;
             overflow: hidden;
         }
-        .fleet-image i { font-size: 4rem; color: var(--primary); opacity: 0.3; }
+        .fleet-image i { font-size: 3.5rem; color: var(--primary); opacity: 0.3; }
         .fleet-badge {
             position: absolute;
             top: 1rem; right: 1rem;
             background: var(--accent);
             color: white;
-            padding: 4px 12px;
+            padding: 4px 10px;
             border-radius: 4px;
-            font-size: 0.7rem;
+            font-size: 0.65rem;
             font-weight: 700;
             letter-spacing: 0.5px;
         }
-        .fleet-content { padding: 1.5rem; }
+        .fleet-content { padding: 1.25rem; }
         .fleet-content h3 {
-            font-size: 1.3rem;
+            font-size: 1.15rem;
             color: var(--primary);
             margin-bottom: 0.5rem;
         }
         .fleet-content p {
             color: var(--text-medium);
-            font-size: 0.9rem;
-            margin-bottom: 1.5rem;
+            font-size: 0.85rem;
+            margin-bottom: 1.25rem;
         }
         .fleet-specs {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 1rem;
+            gap: 0.75rem;
         }
         .fleet-spec {
             text-align: center;
-            padding: 0.75rem;
+            padding: 0.6rem;
             background: var(--bg-white);
             border-radius: 8px;
         }
         .fleet-spec-value {
             font-weight: 700;
             color: var(--primary);
-            font-size: 0.95rem;
+            font-size: 0.9rem;
         }
         .fleet-spec-label {
-            font-size: 0.7rem;
+            font-size: 0.65rem;
             color: var(--text-light);
             text-transform: uppercase;
             letter-spacing: 0.5px;
@@ -485,19 +527,19 @@
         .process-steps {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 2rem;
+            gap: 1.5rem;
             position: relative;
         }
         .process-step { text-align: center; position: relative; }
         .process-step:not(:last-child)::after {
             content: '';
             position: absolute;
-            top: 32px; right: -1rem;
-            width: 2rem; height: 2px;
+            top: 28px; right: -0.75rem;
+            width: 1.5rem; height: 2px;
             background: var(--border-light);
         }
         .process-number {
-            width: 64px; height: 64px;
+            width: 56px; height: 56px;
             background: var(--primary);
             color: white;
             border-radius: 50%;
@@ -505,16 +547,16 @@
             align-items: center;
             justify-content: center;
             font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             font-weight: 700;
-            margin: 0 auto 1.5rem;
+            margin: 0 auto 1.25rem;
         }
         .process-step h3 {
-            font-size: 1.1rem;
+            font-size: 1rem;
             color: var(--primary);
             margin-bottom: 0.5rem;
         }
-        .process-step p { font-size: 0.9rem; color: var(--text-medium); }
+        .process-step p { font-size: 0.85rem; color: var(--text-medium); }
 
         /* ===== ONE HEALTH ===== */
         .one-health {
@@ -527,82 +569,84 @@
         .health-pillars {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
+            gap: 1.5rem;
         }
         .health-pillar {
             background: rgba(255,255,255,0.05);
             border: 1px solid rgba(255,255,255,0.1);
             border-radius: 12px;
-            padding: 2.5rem;
+            padding: 2rem;
             text-align: center;
             transition: background 0.3s;
         }
         .health-pillar:hover { background: rgba(255,255,255,0.08); }
         .health-pillar-icon {
-            width: 72px; height: 72px;
+            width: 64px; height: 64px;
             background: rgba(184,134,11,0.2);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto 1.5rem;
+            margin: 0 auto 1.25rem;
             color: var(--gold);
-            font-size: 1.5rem;
+            font-size: 1.3rem;
         }
-        .health-pillar h3 { font-size: 1.3rem; margin-bottom: 1rem; }
-        .health-pillar p { color: rgba(255,255,255,0.7); font-size: 0.95rem; }
+        .health-pillar h3 { font-size: 1.15rem; margin-bottom: 0.75rem; }
+        .health-pillar p { color: rgba(255,255,255,0.7); font-size: 0.9rem; }
         .health-pillar ul {
             list-style: none;
-            margin-top: 1rem;
+            margin-top: 0.75rem;
             text-align: left;
         }
         .health-pillar ul li {
-            padding: 6px 0;
-            font-size: 0.9rem;
+            padding: 5px 0;
+            font-size: 0.85rem;
             color: rgba(255,255,255,0.7);
             display: flex;
             align-items: center;
             gap: 8px;
         }
-        .health-pillar ul li i { color: var(--gold); font-size: 0.7rem; }
+        .health-pillar ul li i { color: var(--gold); font-size: 0.65rem; }
 
         /* ===== IMPACT ===== */
         .impact { background: var(--bg-white); }
         .impact-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 1.5rem;
+            gap: 1.25rem;
         }
         .impact-card {
             background: var(--bg-cream);
-            padding: 2rem;
+            padding: 1.75rem;
             border-radius: 12px;
             text-align: center;
             border: 1px solid var(--border-light);
+            transition: transform 0.3s;
         }
+        .impact-card:hover { transform: translateY(-4px); }
         .impact-card i {
-            font-size: 2rem;
+            font-size: 1.8rem;
             color: var(--accent);
-            margin-bottom: 1rem;
+            margin-bottom: 0.75rem;
         }
         .impact-card h3 {
-            font-size: 1.8rem;
+            font-size: 1.6rem;
             color: var(--primary);
             margin-bottom: 0.5rem;
         }
-        .impact-card p { font-size: 0.9rem; color: var(--text-medium); }
+        .impact-card p { font-size: 0.85rem; color: var(--text-medium); }
 
         /* ===== BUSINESS MODEL ===== */
         .business-model { background: var(--bg-cream); }
         .model-cards {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 2rem;
-            margin-bottom: 3rem;
+            gap: 1.5rem;
+            margin-bottom: 2.5rem;
         }
         .model-card {
             background: var(--bg-white);
-            padding: 2.5rem;
+            padding: 2rem;
             border-radius: 12px;
             box-shadow: var(--shadow-soft);
             border: 1px solid var(--border-light);
@@ -610,48 +654,48 @@
         .model-card-header {
             display: flex;
             align-items: center;
-            gap: 1rem;
-            margin-bottom: 1.5rem;
+            gap: 0.75rem;
+            margin-bottom: 1.25rem;
         }
-        .model-card-header i { font-size: 1.5rem; color: var(--accent); }
-        .model-card-header h3 { font-size: 1.3rem; color: var(--primary); }
-        .model-card p { color: var(--text-medium); margin-bottom: 1.5rem; }
+        .model-card-header i { font-size: 1.3rem; color: var(--accent); }
+        .model-card-header h3 { font-size: 1.15rem; color: var(--primary); }
+        .model-card p { color: var(--text-medium); margin-bottom: 1.25rem; font-size: 0.9rem; }
         .model-metrics {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 1rem;
+            gap: 0.75rem;
         }
         .model-metric {
             background: var(--bg-cream);
-            padding: 1rem;
+            padding: 0.875rem;
             border-radius: 8px;
         }
         .model-metric-value {
             font-family: 'Playfair Display', serif;
-            font-size: 1.4rem;
+            font-size: 1.3rem;
             font-weight: 700;
             color: var(--primary);
         }
         .model-metric-label {
-            font-size: 0.75rem;
+            font-size: 0.7rem;
             color: var(--text-light);
             margin-top: 4px;
         }
         .model-note {
             background: rgba(184,134,11,0.08);
             border-left: 3px solid var(--gold);
-            padding: 1.5rem 2rem;
+            padding: 1.25rem 1.5rem;
             border-radius: 0 8px 8px 0;
-            margin-top: 2rem;
+            margin-top: 1.5rem;
         }
-        .model-note p { color: var(--text-medium); font-size: 0.95rem; }
+        .model-note p { color: var(--text-medium); font-size: 0.9rem; }
         .model-note strong { color: var(--primary); }
 
         /* ===== ROADMAP ===== */
         .roadmap { background: var(--bg-white); }
         .timeline {
             position: relative;
-            max-width: 900px;
+            max-width: 800px;
             margin: 0 auto;
         }
         .timeline::before {
@@ -668,7 +712,7 @@
             justify-content: flex-end;
             padding-right: 50%;
             position: relative;
-            margin-bottom: 3rem;
+            margin-bottom: 2.5rem;
         }
         .timeline-item:nth-child(even) {
             justify-content: flex-start;
@@ -677,16 +721,16 @@
         }
         .timeline-content {
             background: var(--bg-cream);
-            padding: 1.5rem 2rem;
+            padding: 1.25rem 1.5rem;
             border-radius: 12px;
-            max-width: 380px;
+            max-width: 340px;
             border: 1px solid var(--border-light);
             position: relative;
         }
         .timeline-item:nth-child(odd) .timeline-content::after {
             content: '';
             position: absolute;
-            right: -8px; top: 24px;
+            right: -8px; top: 20px;
             width: 16px; height: 16px;
             background: var(--bg-cream);
             border-top: 1px solid var(--border-light);
@@ -696,7 +740,7 @@
         .timeline-item:nth-child(even) .timeline-content::after {
             content: '';
             position: absolute;
-            left: -8px; top: 24px;
+            left: -8px; top: 20px;
             width: 16px; height: 16px;
             background: var(--bg-cream);
             border-bottom: 1px solid var(--border-light);
@@ -707,14 +751,14 @@
             position: absolute;
             left: 50%;
             transform: translateX(-50%);
-            width: 16px; height: 16px;
+            width: 14px; height: 14px;
             background: var(--accent);
             border-radius: 50%;
             border: 3px solid var(--bg-white);
             box-shadow: 0 0 0 3px var(--accent);
         }
         .timeline-date {
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             font-weight: 700;
             color: var(--accent);
             letter-spacing: 1px;
@@ -722,22 +766,19 @@
             margin-bottom: 0.5rem;
         }
         .timeline-content h3 {
-            font-size: 1.1rem;
+            font-size: 1rem;
             color: var(--primary);
             margin-bottom: 0.5rem;
         }
-        .timeline-content p {
-            font-size: 0.9rem;
-            color: var(--text-medium);
-        }
+        .timeline-content p { font-size: 0.85rem; color: var(--text-medium); }
         .timeline-status {
             display: inline-flex;
             align-items: center;
             gap: 6px;
-            font-size: 0.75rem;
+            font-size: 0.7rem;
             font-weight: 600;
-            margin-top: 0.75rem;
-            padding: 4px 10px;
+            margin-top: 0.5rem;
+            padding: 4px 8px;
             border-radius: 4px;
         }
         .status-completed {
@@ -758,7 +799,7 @@
         .team-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 2rem;
+            gap: 1.5rem;
         }
         .team-card {
             background: var(--bg-white);
@@ -768,46 +809,49 @@
             border: 1px solid var(--border-light);
             transition: transform 0.3s;
         }
-        .team-card:hover {
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-medium);
-        }
+        .team-card:hover { transform: translateY(-4px); }
         .team-photo {
-            height: 280px;
+            height: 240px;
             background: linear-gradient(135deg, #e8e4df 0%, #d4cfc8 100%);
             display: flex;
             align-items: center;
             justify-content: center;
             position: relative;
         }
-        .team-photo i {
-            font-size: 4rem;
-            color: var(--primary);
-            opacity: 0.2;
-        }
-        .team-info { padding: 1.5rem; }
+        .team-photo i { font-size: 3.5rem; color: var(--primary); opacity: 0.2; }
+        .team-info { padding: 1.25rem; }
         .team-info h3 {
-            font-size: 1.1rem;
+            font-size: 1rem;
             color: var(--primary);
             margin-bottom: 4px;
         }
         .team-role {
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             color: var(--accent);
             font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 0.5px;
-            margin-bottom: 0.75rem;
+            margin-bottom: 0.5rem;
         }
         .team-bio {
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             color: var(--text-medium);
-            margin-bottom: 1rem;
+            margin-bottom: 0.75rem;
             line-height: 1.6;
         }
+        .team-contact {
+            font-size: 0.75rem;
+            color: var(--text-light);
+            margin-bottom: 0.75rem;
+        }
+        .team-contact a {
+            color: var(--text-light);
+            text-decoration: none;
+        }
+        .team-contact a:hover { color: var(--primary); }
         .team-social {
             display: flex;
-            gap: 0.75rem;
+            gap: 0.5rem;
         }
         .team-social a {
             width: 32px; height: 32px;
@@ -819,82 +863,141 @@
             color: var(--text-light);
             text-decoration: none;
             transition: all 0.2s;
+            min-height: var(--tap-target);
+            min-width: var(--tap-target);
         }
         .team-social a:hover { background: var(--primary); color: white; }
+
+        /* ===== GOVERNANCE PAGE ===== */
+        .governance { background: var(--bg-white); }
+        .governance-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+        .governance-card {
+            background: var(--bg-cream);
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid var(--border-light);
+        }
+        .governance-card h3 {
+            font-size: 1.2rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        .governance-card h3 i { color: var(--gold); }
+        .governance-card p,
+        .governance-card li {
+            color: var(--text-medium);
+            font-size: 0.9rem;
+            line-height: 1.7;
+        }
+        .governance-card ul {
+            list-style: none;
+            margin-top: 0.75rem;
+        }
+        .governance-card li {
+            padding: 6px 0;
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+        }
+        .governance-card li i {
+            color: var(--accent);
+            font-size: 0.7rem;
+            margin-top: 6px;
+        }
+        .reg-number {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            margin-top: 0.5rem;
+        }
 
         /* ===== INVESTORS ===== */
         .investors { background: var(--bg-white); }
         .investor-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
-            margin-bottom: 3rem;
+            gap: 1.5rem;
+            margin-bottom: 2.5rem;
         }
         .investor-card {
             background: var(--bg-cream);
-            padding: 2.5rem;
+            padding: 2rem;
             border-radius: 12px;
             text-align: center;
             border: 1px solid var(--border-light);
         }
         .investor-card i {
-            font-size: 2.5rem;
+            font-size: 2.2rem;
             color: var(--gold);
-            margin-bottom: 1rem;
+            margin-bottom: 0.75rem;
         }
         .investor-card h3 {
             font-family: 'Playfair Display', serif;
-            font-size: 2rem;
+            font-size: 1.8rem;
             color: var(--primary);
             margin-bottom: 0.5rem;
         }
-        .investor-card p { color: var(--text-medium); font-size: 0.9rem; }
+        .investor-card p { color: var(--text-medium); font-size: 0.85rem; }
 
         .unit-economics {
             background: var(--primary);
             color: white;
-            padding: 3rem;
+            padding: 2.5rem;
             border-radius: 12px;
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 2rem;
+            gap: 1.5rem;
             text-align: center;
         }
         .unit-econ-item h4 {
             font-family: 'Playfair Display', serif;
-            font-size: 2rem;
+            font-size: 1.8rem;
             margin-bottom: 0.5rem;
         }
-        .unit-econ-item p { color: rgba(255,255,255,0.7); font-size: 0.9rem; }
+        .unit-econ-item p { color: rgba(255,255,255,0.7); font-size: 0.85rem; }
 
         .the-ask {
             background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
             color: white;
-            padding: 3rem;
+            padding: 2.5rem;
             border-radius: 12px;
             text-align: center;
-            margin-top: 3rem;
+            margin-top: 2.5rem;
         }
-        .the-ask h3 { font-size: 2rem; margin-bottom: 1rem; }
+        .the-ask h3 { font-size: 1.8rem; margin-bottom: 1rem; }
         .the-ask p {
             color: rgba(255,255,255,0.8);
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem;
             max-width: 600px;
             margin-left: auto;
             margin-right: auto;
+            font-size: 0.95rem;
         }
         .ask-metrics {
             display: flex;
             justify-content: center;
-            gap: 3rem;
-            margin-bottom: 2rem;
+            gap: 2.5rem;
+            margin-bottom: 1.5rem;
         }
         .ask-metric h4 {
             font-family: 'Playfair Display', serif;
-            font-size: 1.8rem;
+            font-size: 1.6rem;
         }
         .ask-metric p {
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             color: rgba(255,255,255,0.7);
         }
 
@@ -904,12 +1007,12 @@
             color: white;
             text-align: center;
         }
-        .cta-section h2 { font-size: 2.5rem; margin-bottom: 1rem; }
+        .cta-section h2 { font-size: 2.2rem; margin-bottom: 1rem; }
         .cta-section p {
             color: rgba(255,255,255,0.8);
-            font-size: 1.1rem;
+            font-size: 1.05rem;
             max-width: 600px;
-            margin: 0 auto 2.5rem;
+            margin: 0 auto 2rem;
         }
         .cta-buttons {
             display: flex;
@@ -922,25 +1025,25 @@
         .footer {
             background: #0f1f28;
             color: rgba(255,255,255,0.7);
-            padding: 4rem 2rem 2rem;
+            padding: 3rem 1.5rem 1.5rem;
         }
         .footer-container { max-width: 1280px; margin: 0 auto; }
         .footer-grid {
             display: grid;
             grid-template-columns: 2fr 1fr 1fr 1.5fr;
-            gap: 3rem;
-            margin-bottom: 3rem;
+            gap: 2.5rem;
+            margin-bottom: 2.5rem;
         }
         .footer-brand h3 {
             font-family: 'Playfair Display', serif;
             color: white;
-            font-size: 1.3rem;
-            margin-bottom: 1rem;
+            font-size: 1.2rem;
+            margin-bottom: 0.75rem;
         }
         .footer-brand p {
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             line-height: 1.7;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1rem;
         }
         .footer-brand .tagline { font-style: italic; color: var(--gold); }
 
@@ -948,13 +1051,13 @@
             display: flex;
             align-items: flex-start;
             gap: 10px;
-            margin-bottom: 1rem;
-            font-size: 0.9rem;
+            margin-bottom: 0.75rem;
+            font-size: 0.85rem;
         }
         .footer-contact-item i {
             color: var(--gold);
             margin-top: 4px;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
         }
         .footer-contact-item a {
             color: rgba(255,255,255,0.7);
@@ -965,39 +1068,43 @@
 
         .footer-links h4 {
             color: white;
-            font-size: 0.9rem;
+            font-size: 0.8rem;
             font-weight: 600;
             letter-spacing: 1px;
             text-transform: uppercase;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.25rem;
         }
         .footer-links ul { list-style: none; }
-        .footer-links li { margin-bottom: 0.75rem; }
+        .footer-links li { margin-bottom: 0.6rem; }
         .footer-links a {
             color: rgba(255,255,255,0.6);
             text-decoration: none;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             transition: color 0.2s;
+            min-height: var(--tap-target);
+            display: flex;
+            align-items: center;
         }
         .footer-links a:hover { color: white; }
 
         .newsletter-form {
             display: flex;
             gap: 0.5rem;
-            margin-top: 1rem;
+            margin-top: 0.75rem;
         }
         .newsletter-form input {
             flex: 1;
-            padding: 10px 14px;
+            padding: 10px 12px;
             border: 1px solid rgba(255,255,255,0.2);
             border-radius: 6px;
             background: rgba(255,255,255,0.05);
             color: white;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
+            min-height: var(--tap-target);
         }
         .newsletter-form input::placeholder { color: rgba(255,255,255,0.4); }
         .newsletter-form button {
-            padding: 10px 18px;
+            padding: 10px 16px;
             background: var(--accent);
             color: white;
             border: none;
@@ -1005,12 +1112,14 @@
             cursor: pointer;
             font-weight: 600;
             transition: background 0.2s;
+            min-height: var(--tap-target);
+            min-width: var(--tap-target);
         }
         .newsletter-form button:hover { background: var(--accent-dark); }
 
         .footer-bottom {
             border-top: 1px solid rgba(255,255,255,0.1);
-            padding-top: 2rem;
+            padding-top: 1.5rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -1018,12 +1127,12 @@
             gap: 1rem;
         }
         .footer-bottom p {
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             color: rgba(255,255,255,0.5);
         }
         .footer-social {
             display: flex;
-            gap: 1rem;
+            gap: 0.75rem;
         }
         .footer-social a {
             width: 36px; height: 36px;
@@ -1035,6 +1144,8 @@
             color: rgba(255,255,255,0.6);
             text-decoration: none;
             transition: all 0.2s;
+            min-height: var(--tap-target);
+            min-width: var(--tap-target);
         }
         .footer-social a:hover { background: var(--accent); color: white; }
 
@@ -1048,14 +1159,16 @@
             align-items: center;
             justify-content: center;
             backdrop-filter: blur(4px);
+            -webkit-backdrop-filter: blur(4px);
+            padding: 1rem;
         }
         .modal-overlay.active { display: flex; }
         .modal {
             background: white;
             border-radius: 12px;
-            padding: 2.5rem;
-            max-width: 500px;
-            width: 90%;
+            padding: 2rem;
+            max-width: 480px;
+            width: 100%;
             max-height: 90vh;
             overflow-y: auto;
             position: relative;
@@ -1067,37 +1180,41 @@
         }
         .modal-close {
             position: absolute;
-            top: 1rem; right: 1rem;
+            top: 0.75rem; right: 0.75rem;
             background: none;
             border: none;
             font-size: 1.5rem;
             color: var(--text-light);
             cursor: pointer;
+            min-height: var(--tap-target);
+            min-width: var(--tap-target);
         }
         .modal h3 {
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             color: var(--primary);
             margin-bottom: 0.5rem;
+            padding-right: 2rem;
         }
-        .modal p { color: var(--text-medium); margin-bottom: 1.5rem; }
-        .form-group { margin-bottom: 1.25rem; }
+        .modal p { color: var(--text-medium); margin-bottom: 1.25rem; font-size: 0.9rem; }
+        .form-group { margin-bottom: 1rem; }
         .form-group label {
             display: block;
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             font-weight: 600;
             color: var(--text-dark);
-            margin-bottom: 6px;
+            margin-bottom: 5px;
         }
         .form-group input,
         .form-group select,
         .form-group textarea {
             width: 100%;
-            padding: 10px 14px;
+            padding: 10px 12px;
             border: 1.5px solid var(--border-light);
             border-radius: 6px;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             font-family: inherit;
             transition: border-color 0.2s;
+            min-height: var(--tap-target);
         }
         .form-group input:focus,
         .form-group select:focus,
@@ -1107,63 +1224,86 @@
         }
         .form-group textarea {
             resize: vertical;
-            min-height: 100px;
+            min-height: 80px;
         }
 
         /* ===== MOBILE MENU ===== */
         .mobile-menu {
             display: none;
             position: fixed;
-            top: 72px; left: 0; right: 0;
+            top: 64px; left: 0; right: 0;
             background: white;
             border-bottom: 1px solid var(--border-light);
-            padding: 1.5rem 2rem;
+            padding: 1rem 1.5rem;
             z-index: 999;
             box-shadow: var(--shadow-medium);
+            max-height: calc(100vh - 64px);
+            overflow-y: auto;
         }
         .mobile-menu.active { display: block; }
         .mobile-menu a {
             display: block;
-            padding: 0.75rem 0;
+            padding: 0.875rem 0;
             color: var(--text-dark);
             text-decoration: none;
             font-weight: 500;
             border-bottom: 1px solid var(--border-light);
+            min-height: var(--tap-target);
+            display: flex;
+            align-items: center;
         }
         .mobile-menu a:last-child { border-bottom: none; }
         .mobile-menu .btn {
-            margin-top: 1rem;
+            margin-top: 0.75rem;
             width: 100%;
             justify-content: center;
+        }
+
+        /* ===== SCROLL REVEAL ANIMATION ===== */
+        .reveal {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
         }
 
         /* ===== RESPONSIVE ===== */
         @media (max-width: 1024px) {
             .hero-container { grid-template-columns: 1fr; text-align: center; }
+            .hero-fundraise { text-align: left; max-width: 500px; margin-left: auto; margin-right: auto; }
             .hero-subtitle { margin-left: auto; margin-right: auto; }
             .hero-ctas { justify-content: center; }
             .hero-stats { justify-content: center; }
-            .hero-image { max-width: 600px; margin: 0 auto; }
-            .fleet-grid, .health-pillars, .impact-grid, .team-grid {
+            .hero-image { max-width: 500px; margin: 0 auto; }
+            .fleet-grid, .health-pillars, .impact-grid, .team-grid, .governance-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
             .process-steps { grid-template-columns: repeat(2, 1fr); }
             .process-step:not(:last-child)::after { display: none; }
             .footer-grid { grid-template-columns: repeat(2, 1fr); }
+            .unit-economics { grid-template-columns: repeat(2, 1fr); }
         }
 
         @media (max-width: 768px) {
             .nav-links, .nav-cta { display: none; }
-            .mobile-toggle { display: block; }
-            .hero h1 { font-size: 2.5rem; }
+            .mobile-toggle { display: flex; align-items: center; justify-content: center; }
+            .hero { padding-top: 64px; }
+            .hero h1 { font-size: 2.2rem; }
+            .hero-fundraise-item { padding: 8px 0; }
+            .hero-fundraise-item strong { font-size: 0.9rem; }
+            .hero-fundraise-item span { font-size: 0.85rem; }
             .crisis-grid, .fleet-grid, .health-pillars, .impact-grid,
-            .team-grid, .model-cards, .investor-grid, .unit-economics {
+            .team-grid, .model-cards, .investor-grid, .unit-economics,
+            .governance-grid {
                 grid-template-columns: 1fr;
             }
             .process-steps { grid-template-columns: 1fr; }
             .timeline::before { left: 20px; }
             .timeline-item, .timeline-item:nth-child(even) {
-                padding-left: 60px;
+                padding-left: 50px;
                 padding-right: 0;
                 justify-content: flex-start;
             }
@@ -1175,9 +1315,224 @@
                 border-bottom: 1px solid var(--border-light);
                 border-left: 1px solid var(--border-light);
             }
-            .ask-metrics { flex-direction: column; gap: 1.5rem; }
+            .ask-metrics { flex-direction: column; gap: 1rem; }
             .footer-grid { grid-template-columns: 1fr; }
             .footer-bottom { flex-direction: column; text-align: center; }
+            section { padding: 3rem 1rem; }
+            .modal { padding: 1.5rem; }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 { font-size: 1.8rem; }
+            .section-header h2 { font-size: 1.6rem; }
+            .hero-stats { flex-direction: column; gap: 1rem; }
+            .btn-large { padding: 12px 20px; font-size: 0.9rem; }
+            .the-ask { padding: 1.5rem; }
+            .unit-economics { padding: 1.5rem; gap: 1rem; }
+        }
+
+        /* ===== MISSION, VISION & GOALS ===== */
+        .mission-vision { background: var(--bg-cream); }
+
+        .mv-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .mv-card {
+            background: var(--bg-white);
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow-soft);
+            border: 1px solid var(--border-light);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .mv-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 4px;
+        }
+
+        .mission-card::before { background: var(--accent); }
+        .vision-card::before { background: var(--gold); }
+
+        .mv-icon {
+            width: 72px; height: 72px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 1.8rem;
+        }
+
+        .mission-card .mv-icon {
+            background: rgba(196,30,58,0.08);
+            color: var(--accent);
+        }
+
+        .vision-card .mv-icon {
+            background: rgba(184,134,11,0.08);
+            color: var(--gold);
+        }
+
+        .mv-card h3 {
+            font-size: 1.4rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .mv-statement {
+            font-size: 1.05rem;
+            color: var(--text-medium);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .mv-highlight {
+            background: var(--bg-cream);
+            padding: 1rem 1.25rem;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            color: var(--primary);
+            font-size: 0.95rem;
+        }
+
+        .mv-highlight i { color: var(--gold); font-size: 0.9rem; }
+
+        /* Goals */
+        .goals-container {
+            background: var(--bg-white);
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow-soft);
+            border: 1px solid var(--border-light);
+            margin-bottom: 2rem;
+        }
+
+        .goals-container h3 {
+            font-size: 1.3rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .goals-container h3 i { color: var(--accent); }
+
+        .goals-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+
+        .goal-item {
+            display: flex;
+            gap: 1rem;
+            padding: 1.25rem;
+            background: var(--bg-cream);
+            border-radius: 10px;
+            border-left: 3px solid var(--accent);
+        }
+
+        .goal-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--accent);
+            line-height: 1;
+            flex-shrink: 0;
+        }
+
+        .goal-content h4 {
+            font-size: 1.05rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .goal-content p {
+            font-size: 0.9rem;
+            color: var(--text-medium);
+            margin-bottom: 0.5rem;
+            line-height: 1.6;
+        }
+
+        .goal-timeline {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--gold);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Values */
+        .values-container {
+            background: var(--primary);
+            color: white;
+            padding: 2.5rem;
+            border-radius: 12px;
+        }
+
+        .values-container h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .values-container h3 i { color: var(--gold); }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+        }
+
+        .value-item {
+            text-align: center;
+            padding: 1.25rem;
+        }
+
+        .value-item i {
+            font-size: 2rem;
+            color: var(--gold);
+            margin-bottom: 0.75rem;
+        }
+
+        .value-item h4 {
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .value-item p {
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.7);
+            line-height: 1.6;
+        }
+
+        @media (max-width: 1024px) {
+            .mv-grid { grid-template-columns: 1fr; }
+            .goals-grid { grid-template-columns: 1fr; }
+            .values-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        @media (max-width: 768px) {
+            .values-grid { grid-template-columns: 1fr; }
+            .mv-card { padding: 1.75rem; }
+            .goals-container { padding: 1.75rem; }
+            .values-container { padding: 1.75rem; }
         }
     </style>
 </head>
@@ -1186,29 +1541,31 @@
     <!-- Navigation -->
     <nav class="navbar" id="navbar">
         <div class="nav-container">
-            <a href="#" class="logo">
+            <a href="#" class="logo" onclick="window.scrollTo({top:0,behavior:'smooth'}); return false;">
                 <div class="logo-icon">
                     <i class="fas fa-plane"></i>
                 </div>
                 <div>
                     <div class="logo-text">SAHWARA AEROMEDIQ</div>
-                    <span class="logo-sub">Non-Profit Company</span>
+                    <span class="logo-sub">NPC &middot; Reg: K2026371011</span>
                 </div>
             </a>
             <ul class="nav-links">
                 <li><a href="#crisis">The Crisis</a></li>
+                <li><a href="#mission">Mission</a></li>
                 <li><a href="#solution">Solution</a></li>
                 <li><a href="#one-health">One Health</a></li>
                 <li><a href="#model">Business Model</a></li>
                 <li><a href="#roadmap">Roadmap</a></li>
                 <li><a href="#team">Team</a></li>
+                <li><a href="#governance">Governance</a></li>
                 <li><a href="#invest">Invest</a></li>
             </ul>
             <div class="nav-cta">
                 <a href="#" class="btn btn-outline" onclick="openModal('pilot'); return false;">Request Pilot</a>
                 <a href="#" class="btn btn-primary" onclick="openModal('investor'); return false;">Investor Deck</a>
             </div>
-            <button class="mobile-toggle" onclick="toggleMobileMenu()">
+            <button class="mobile-toggle" onclick="toggleMobileMenu()" aria-label="Toggle menu">
                 <i class="fas fa-bars"></i>
             </button>
         </div>
@@ -1216,26 +1573,53 @@
 
     <div class="mobile-menu" id="mobileMenu">
         <a href="#crisis" onclick="toggleMobileMenu()">The Crisis</a>
+        <a href="#mission" onclick="toggleMobileMenu()">Mission</a>
         <a href="#solution" onclick="toggleMobileMenu()">Solution</a>
         <a href="#one-health" onclick="toggleMobileMenu()">One Health</a>
         <a href="#model" onclick="toggleMobileMenu()">Business Model</a>
         <a href="#roadmap" onclick="toggleMobileMenu()">Roadmap</a>
         <a href="#team" onclick="toggleMobileMenu()">Team</a>
+        <a href="#governance" onclick="toggleMobileMenu()">Governance</a>
         <a href="#invest" onclick="toggleMobileMenu()">Invest</a>
         <a href="#" class="btn btn-primary" onclick="openModal('pilot'); toggleMobileMenu(); return false;">Request Pilot Program</a>
         <a href="#" class="btn btn-outline" onclick="openModal('investor'); toggleMobileMenu(); return false;" style="margin-top:0.5rem;">Investor Deck</a>
     </div>
 
-    <!-- Hero -->
+    <!-- Hero - Fundraising Focused: Problem → Solution → Impact -->
     <section class="hero">
         <div class="hero-container">
             <div class="hero-content">
                 <div class="hero-badge">
-                    <i class="fas fa-circle"></i>
-                    Pre-Launch Stage
+                    <i class="fas fa-circle" style="font-size:0.5rem;"></i>
+                    Pre-Launch Stage &middot; NPC Reg: K2026371011
                 </div>
                 <h1>Delivering Life <span>Beyond the Road</span></h1>
-                <p class="hero-subtitle">Autonomous aerial medical logistics for rural South Africa. Bridging critical supply chain gaps across human health, animal health, and environmental stewardship.</p>
+
+                <!-- 10-Second Fundraising Clarity -->
+                <div class="hero-fundraise">
+                    <div class="hero-fundraise-item">
+                        <i class="fas fa-triangle-exclamation"></i>
+                        <div>
+                            <strong>The Problem</strong>
+                            <span>72+ hour delays for emergency medicines in rural KZN. 55% of livestock without vaccines. Mothers turned away from clinics.</span>
+                        </div>
+                    </div>
+                    <div class="hero-fundraise-item">
+                        <i class="fas fa-plane"></i>
+                        <div>
+                            <strong>Our Solution</strong>
+                            <span>Autonomous medical drones delivering supplies in under 60 minutes. One Health integration: human, animal, and environmental.</span>
+                        </div>
+                    </div>
+                    <div class="hero-fundraise-item">
+                        <i class="fas fa-heart"></i>
+                        <div>
+                            <strong>Your Impact</strong>
+                            <span>R10,000 funds a life-saving flight. R250,000 launches our pilot in uThukela District. Every rand saves rural lives.</span>
+                        </div>
+                    </div>
+                </div>
+
                 <p class="hero-tagline">"Wings of Hope, Hands of Care"</p>
                 <div class="hero-ctas">
                     <a href="#" class="btn btn-primary btn-large" onclick="openModal('pilot'); return false;">
@@ -1262,8 +1646,8 @@
                     </div>
                 </div>
             </div>
-            <div class="hero-image">
-                <img src="https://images.unsplash.com/photo-1508614589041-895b8c9d7ef5?w=800&h=600&fit=crop" alt="Aerial view of rural South African landscape with dirt roads and scattered settlements">
+            <div class="hero-image reveal">
+                <img src="https://images.unsplash.com/photo-1508614589041-895b8c9d7ef5?w=800&h=600&fit=crop" alt="Aerial view of rural South African landscape with dirt roads and scattered settlements" loading="lazy">
             </div>
         </div>
     </section>
@@ -1304,27 +1688,27 @@
     <!-- Crisis -->
     <section class="crisis" id="crisis">
         <div class="section-container">
-            <div class="section-header">
+            <div class="section-header reveal">
                 <span class="section-label">The Crisis</span>
                 <h2>Geography Should Not Dictate Survival</h2>
                 <p>In KwaZulu-Natal, 68% of roads are unpaved, potholed, and flood-prone. The physical backbone of rural healthcare is crumbling with devastating consequences.</p>
             </div>
             <div class="crisis-grid">
-                <div class="crisis-card">
+                <div class="crisis-card reveal">
                     <div class="crisis-icon">
                         <i class="fas fa-road"></i>
                     </div>
                     <h3>72+ Hours</h3>
                     <p>Routine delays for essential medicine restocking due to broken infrastructure and seasonal flooding</p>
                 </div>
-                <div class="crisis-card">
+                <div class="crisis-card reveal">
                     <div class="crisis-icon">
                         <i class="fas fa-cow"></i>
                     </div>
                     <h3>55%</h3>
                     <p>Of livestock face vaccine and antibiotic shortages because veterinary posts are disconnected from supply depots</p>
                 </div>
-                <div class="crisis-card">
+                <div class="crisis-card reveal">
                     <div class="crisis-icon">
                         <i class="fas fa-triangle-exclamation"></i>
                     </div>
@@ -1336,16 +1720,122 @@
         </div>
     </section>
 
+    
+    <!-- Mission, Vision & Goals - NEW SECTION -->
+    <section class="mission-vision" id="mission">
+        <div class="section-container">
+            <div class="section-header reveal">
+                <span class="section-label">Our Purpose</span>
+                <h2>Mission, Vision & Strategic Goals</h2>
+                <p>Every decision we make is guided by our commitment to rural health equity and transparent accountability to our communities and partners.</p>
+            </div>
+
+            <div class="mv-grid">
+                <!-- Mission -->
+                <div class="mv-card mission-card reveal">
+                    <div class="mv-icon">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <h3>Our Mission</h3>
+                    <p class="mv-statement">To bridge critical healthcare supply chain gaps in underserved rural South African communities through autonomous aerial logistics, integrating human health, animal health, and environmental stewardship while creating sustainable rural livelihoods.</p>
+                    <div class="mv-highlight">
+                        <i class="fas fa-quote-left"></i>
+                        <span>"Wings of Hope, Hands of Care"</span>
+                    </div>
+                </div>
+
+                <!-- Vision -->
+                <div class="mv-card vision-card reveal">
+                    <div class="mv-icon">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <h3>Our Vision</h3>
+                    <p class="mv-statement">A South Africa where every rural community — regardless of geography or infrastructure — has reliable, timely access to life-saving medical supplies, veterinary care, and climate-resilient logistics by 2035.</p>
+                    <div class="mv-highlight">
+                        <i class="fas fa-map"></i>
+                        <span>National coverage across all 9 provinces</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Strategic Goals -->
+            <div class="goals-container reveal">
+                <h3><i class="fas fa-flag-checkered"></i> Strategic Goals (2026–2030)</h3>
+                <div class="goals-grid">
+                    <div class="goal-item">
+                        <div class="goal-number">01</div>
+                        <div class="goal-content">
+                            <h4>Prove the Model</h4>
+                            <p>Complete 1,000 successful deliveries in uThukela District, demonstrating One Health integration and operational viability.</p>
+                            <span class="goal-timeline">By end of 2026</span>
+                        </div>
+                    </div>
+                    <div class="goal-item">
+                        <div class="goal-number">02</div>
+                        <div class="goal-content">
+                            <h4>Scale Across KZN</h4>
+                            <p>Expand to provincial coverage with 25,000 annual deliveries, 50+ integrated facilities, and break-even operations.</p>
+                            <span class="goal-timeline">By July 2028</span>
+                        </div>
+                    </div>
+                    <div class="goal-item">
+                        <div class="goal-number">03</div>
+                        <div class="goal-content">
+                            <h4>National Replication</h4>
+                            <p>Deploy replication playbooks for Limpopo, Eastern Cape, and Mpumalanga with National Treasury engagement.</p>
+                            <span class="goal-timeline">By 2030</span>
+                        </div>
+                    </div>
+                    <div class="goal-item">
+                        <div class="goal-number">04</div>
+                        <div class="goal-content">
+                            <h4>Community Empowerment</h4>
+                            <p>Create 120 certified rural drone operators and maintenance technicians through SACAA/SETA programs.</p>
+                            <span class="goal-timeline">By 2030</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Values -->
+            <div class="values-container reveal">
+                <h3><i class="fas fa-heart"></i> Our Core Values</h3>
+                <div class="values-grid">
+                    <div class="value-item">
+                        <i class="fas fa-hand-holding-heart"></i>
+                        <h4>Community First</h4>
+                        <p>Every decision prioritizes the health and dignity of rural communities we serve.</p>
+                    </div>
+                    <div class="value-item">
+                        <i class="fas fa-scale-balanced"></i>
+                        <h4>Radical Transparency</h4>
+                        <p>Public audits, open impact reporting, and accountable governance are non-negotiable.</p>
+                    </div>
+                    <div class="value-item">
+                        <i class="fas fa-seedling"></i>
+                        <h4>One Health Integration</h4>
+                        <p>Human, animal, and environmental health are inseparable — we treat them as one system.</p>
+                    </div>
+                    <div class="value-item">
+                        <i class="fas fa-people-group"></i>
+                        <h4>Local Employment</h4>
+                        <p>We train and hire from the communities we serve, building skills and sustainable livelihoods.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Solution -->
     <section class="solution" id="solution">
         <div class="section-container">
-            <div class="section-header">
+            <div class="section-header reveal">
                 <span class="section-label">Our Solution</span>
                 <h2>Integrated One Health Logistics</h2>
                 <p>Medical-grade unmanned aerial vehicles bypassing broken infrastructure to reach communities no truck can serve in time.</p>
             </div>
             <div class="fleet-grid">
-                <div class="fleet-card">
+                <div class="fleet-card reveal">
                     <div class="fleet-image">
                         <i class="fas fa-truck-medical"></i>
                         <span class="fleet-badge">SA-1</span>
@@ -1369,7 +1859,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="fleet-card">
+                <div class="fleet-card reveal">
                     <div class="fleet-image">
                         <i class="fas fa-vial"></i>
                         <span class="fleet-badge">SA-2</span>
@@ -1393,7 +1883,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="fleet-card">
+                <div class="fleet-card reveal">
                     <div class="fleet-image">
                         <i class="fas fa-syringe"></i>
                         <span class="fleet-badge">SA-3</span>
@@ -1424,28 +1914,28 @@
     <!-- Process -->
     <section class="process">
         <div class="section-container">
-            <div class="section-header">
+            <div class="section-header reveal">
                 <span class="section-label">How It Works</span>
                 <h2>From Request to Delivery in Minutes</h2>
                 <p>A seamless six-step process designed for rural healthcare workers with minimal technical literacy requirements.</p>
             </div>
             <div class="process-steps">
-                <div class="process-step">
+                <div class="process-step reveal">
                     <div class="process-number">01</div>
                     <h3>Request</h3>
                     <p>Clinic or veterinary post submits request via SMS, app, or dedicated hotline</p>
                 </div>
-                <div class="process-step">
+                <div class="process-step reveal">
                     <div class="process-number">02</div>
                     <h3>Dispatch</h3>
                     <p>AI platform optimizes route, consolidates multi-sector payloads, assigns nearest drone</p>
                 </div>
-                <div class="process-step">
+                <div class="process-step reveal">
                     <div class="process-number">03</div>
                     <h3>Flight</h3>
                     <p>Medical-grade UAV bypasses terrain and weather barriers autonomously</p>
                 </div>
-                <div class="process-step">
+                <div class="process-step reveal">
                     <div class="process-number">04</div>
                     <h3>Delivery</h3>
                     <p>Precision landing at designated zone with real-time tracking throughout</p>
@@ -1457,13 +1947,13 @@
     <!-- One Health -->
     <section class="one-health" id="one-health">
         <div class="section-container">
-            <div class="section-header">
+            <div class="section-header reveal">
                 <span class="section-label">Our Approach</span>
                 <h2>True One Health Integration</h2>
                 <p>The only drone logistics operator in South Africa integrating human, animal, and environmental health vertically not a health-only or logistics-only play.</p>
             </div>
             <div class="health-pillars">
-                <div class="health-pillar">
+                <div class="health-pillar reveal">
                     <div class="health-pillar-icon">
                         <i class="fas fa-user-doctor"></i>
                     </div>
@@ -1476,7 +1966,7 @@
                         <li><i class="fas fa-check"></i> Maternal referral completion</li>
                     </ul>
                 </div>
-                <div class="health-pillar">
+                <div class="health-pillar reveal">
                     <div class="health-pillar-icon">
                         <i class="fas fa-cow"></i>
                     </div>
@@ -1489,7 +1979,7 @@
                         <li><i class="fas fa-check"></i> Food security protection</li>
                     </ul>
                 </div>
-                <div class="health-pillar">
+                <div class="health-pillar reveal">
                     <div class="health-pillar-icon">
                         <i class="fas fa-leaf"></i>
                     </div>
@@ -1509,28 +1999,28 @@
     <!-- Impact -->
     <section class="impact">
         <div class="section-container">
-            <div class="section-header">
+            <div class="section-header reveal">
                 <span class="section-label">Measurable Impact</span>
                 <h2>Targets for 2028</h2>
                 <p>Explicit baselines and targets across five dimensions, integrated with DHIS2 and laboratory information systems.</p>
             </div>
             <div class="impact-grid">
-                <div class="impact-card">
+                <div class="impact-card reveal">
                     <i class="fas fa-clock"></i>
                     <h3>&le;3 Days</h3>
                     <p>Critical medicine stockout days per clinic per month (from 8 days baseline)</p>
                 </div>
-                <div class="impact-card">
+                <div class="impact-card reveal">
                     <i class="fas fa-truck-fast"></i>
                     <h3>&le;45 Min</h3>
                     <p>Emergency response time from rural clinic to hospital (from 4-6 hours)</p>
                 </div>
-                <div class="impact-card">
+                <div class="impact-card reveal">
                     <i class="fas fa-shield-dog"></i>
                     <h3>&ge;80%</h3>
                     <p>Livestock vaccine coverage in partner districts (from 45% baseline)</p>
                 </div>
-                <div class="impact-card">
+                <div class="impact-card reveal">
                     <i class="fas fa-users"></i>
                     <h3>45 Jobs</h3>
                     <p>Direct and indirect local jobs created through community-based operations</p>
@@ -1542,13 +2032,13 @@
     <!-- Business Model -->
     <section class="business-model" id="model">
         <div class="section-container">
-            <div class="section-header">
+            <div class="section-header reveal">
                 <span class="section-label">Revenue Model</span>
                 <h2>Sustainable Hybrid Approach</h2>
                 <p>Starting B2B to build trust and operational proof, then transitioning into B2G contracts for scale and systemic integration.</p>
             </div>
             <div class="model-cards">
-                <div class="model-card">
+                <div class="model-card reveal">
                     <div class="model-card-header">
                         <i class="fas fa-building"></i>
                         <h3>B2B Private Sector</h3>
@@ -1565,7 +2055,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="model-card">
+                <div class="model-card reveal">
                     <div class="model-card-header">
                         <i class="fas fa-landmark"></i>
                         <h3>B2G Public Sector</h3>
@@ -1583,8 +2073,8 @@
                     </div>
                 </div>
             </div>
-            <div class="model-note">
-                <p><strong>NPC Structure Advantage:</strong> As a South African Non-Profit Company, every financial surplus is reinvested into expanding access not distributed to shareholders. This alignment builds trust with government partners and qualifies us for blended finance instruments unavailable to for-profit competitors.</p>
+            <div class="model-note reveal">
+                <p><strong>NPC Structure Advantage:</strong> As a South African Non-Profit Company (Reg: K2026371011), every financial surplus is reinvested into expanding access not distributed to shareholders. This alignment builds trust with government partners and qualifies us for blended finance instruments unavailable to for-profit competitors.</p>
             </div>
         </div>
     </section>
@@ -1592,13 +2082,13 @@
     <!-- Roadmap -->
     <section class="roadmap" id="roadmap">
         <div class="section-container">
-            <div class="section-header">
+            <div class="section-header reveal">
                 <span class="section-label">Our Journey</span>
                 <h2>Strategic Roadmap</h2>
                 <p>From pilot to provincial scale a phased approach with clear milestones and capital requirements.</p>
             </div>
             <div class="timeline">
-                <div class="timeline-item">
+                <div class="timeline-item reveal">
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
                         <div class="timeline-date">Q1 2026</div>
@@ -1607,7 +2097,7 @@
                         <span class="timeline-status status-completed"><i class="fas fa-check"></i> Completed</span>
                     </div>
                 </div>
-                <div class="timeline-item">
+                <div class="timeline-item reveal">
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
                         <div class="timeline-date">Q2 2026</div>
@@ -1616,7 +2106,7 @@
                         <span class="timeline-status status-progress"><i class="fas fa-spinner"></i> In Progress</span>
                     </div>
                 </div>
-                <div class="timeline-item">
+                <div class="timeline-item reveal">
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
                         <div class="timeline-date">Q3-Q4 2026</div>
@@ -1625,7 +2115,7 @@
                         <span class="timeline-status status-upcoming"><i class="fas fa-calendar"></i> Upcoming</span>
                     </div>
                 </div>
-                <div class="timeline-item">
+                <div class="timeline-item reveal">
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
                         <div class="timeline-date">2027</div>
@@ -1634,7 +2124,7 @@
                         <span class="timeline-status status-upcoming"><i class="fas fa-calendar"></i> Upcoming</span>
                     </div>
                 </div>
-                <div class="timeline-item">
+                <div class="timeline-item reveal">
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
                         <div class="timeline-date">2028</div>
@@ -1650,41 +2140,49 @@
     <!-- Leadership -->
     <section class="leadership" id="team">
         <div class="section-container">
-            <div class="section-header">
+            <div class="section-header reveal">
                 <span class="section-label">Leadership</span>
                 <h2>The Team Behind the Mission</h2>
                 <p>Four founders with deep expertise across aviation, engineering, medicine, and social impact committed to rural health equity.</p>
             </div>
             <div class="team-grid">
-                <div class="team-card">
+                <div class="team-card reveal">
                     <div class="team-photo">
                         <i class="fas fa-user"></i>
                     </div>
                     <div class="team-info">
-                        <h3>Godfrey C. Muyambi</h3>
+                        <h3>Dr. Godfrey C. Muyambi</h3>
                         <div class="team-role">Director of Investments</div>
                         <p class="team-bio">Vision and strategy; government relations; partnership development; operational oversight. Deep commitment to rural health equity and One Health integration.</p>
+                        <div class="team-contact">
+                            <a href="mailto:muyambigodfrey@gmail.com">muyambigodfrey@gmail.com</a><br>
+                            <a href="tel:+27835998930">+27 83 599 8930</a>
+                        </div>
                         <div class="team-social">
                             <a href="https://www.linkedin.com/in/godfrey-chitsauko-muyambi-phd-2b1b70106/" target="_blank" rel="noopener noreferrer" aria-label="Godfrey Muyambi LinkedIn"><i class="fab fa-linkedin-in"></i></a>
                             <a href="mailto:muyambigodfrey@gmail.com" aria-label="Email Godfrey Muyambi"><i class="fas fa-envelope"></i></a>
                         </div>
                     </div>
                 </div>
-                <div class="team-card">
+                <div class="team-card reveal">
                     <div class="team-photo">
                         <i class="fas fa-user"></i>
                     </div>
                     <div class="team-info">
-                        <h3>Lister M. Dzikiti</h3>
+                        <h3>Dr. Lister M. Dzikiti</h3>
                         <div class="team-role">Director of Operations</div>
                         <p class="team-bio">UAV fleet management; logistics optimization; SACAA compliance; former aviation and medical logistics operations background.</p>
+                        <div class="team-contact">
+                            <a href="mailto:listerdz@yahoo.com">listerdz@yahoo.com</a><br>
+                            <a href="tel:+27787510784">+27 78 751 0784</a>
+                        </div>
                         <div class="team-social">
                             <a href="https://www.linkedin.com/in/lister-munodawafa-dzikiti-7150b57a/" target="_blank" rel="noopener noreferrer" aria-label="Lister Dzikiti LinkedIn"><i class="fab fa-linkedin-in"></i></a>
                             <a href="mailto:listerdz@yahoo.com" aria-label="Email Lister Dzikiti"><i class="fas fa-envelope"></i></a>
                         </div>
                     </div>
                 </div>
-                <div class="team-card">
+                <div class="team-card reveal">
                     <div class="team-photo">
                         <i class="fas fa-user"></i>
                     </div>
@@ -1692,23 +2190,31 @@
                         <h3>Caroline Shihlabane</h3>
                         <div class="team-role">Chief Technology Officer</div>
                         <p class="team-bio">AI platform development; data systems architecture; cold-chain integration; health informatics expertise.</p>
+                        <div class="team-contact">
+                            <a href="mailto:carolshihlabane@gmail.com">carolshihlabane@gmail.com</a><br>
+                            <a href="tel:+27792545487">+27 79 254 5487</a>
+                        </div>
                         <div class="team-social">
                             <a href="#" aria-label="Caroline Shihlabane LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                            <a href="#" aria-label="Email Caroline Shihlabane"><i class="fas fa-envelope"></i></a>
+                            <a href="mailto:carolshihlabane@gmail.com" aria-label="Email Caroline Shihlabane"><i class="fas fa-envelope"></i></a>
                         </div>
                     </div>
                 </div>
-                <div class="team-card">
+                <div class="team-card reveal">
                     <div class="team-photo">
                         <i class="fas fa-user"></i>
                     </div>
                     <div class="team-info">
-                        <h3>Orapeleng M. Semakane</h3>
+                        <h3>Orapeleng Mathake Semakane</h3>
                         <div class="team-role">Veterinary & One Health Advisor</div>
                         <p class="team-bio">SA Veterinary Council registered; zoonotic disease expertise; agricultural stakeholder engagement; rural development background.</p>
+                        <div class="team-contact">
+                            <a href="mailto:orapelengmathake@gmail.com">orapelengmathake@gmail.com</a><br>
+                            <a href="tel:+27825158689">+27 82 515 8689</a>
+                        </div>
                         <div class="team-social">
                             <a href="#" aria-label="Orapeleng Semakane LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                            <a href="#" aria-label="Email Orapeleng Semakane"><i class="fas fa-envelope"></i></a>
+                            <a href="mailto:orapelengmathake@gmail.com" aria-label="Email Orapeleng Semakane"><i class="fas fa-envelope"></i></a>
                         </div>
                     </div>
                 </div>
@@ -1716,32 +2222,84 @@
         </div>
     </section>
 
+    <!-- GOVERNANCE PAGE - NEW SECTION -->
+    <section class="governance" id="governance">
+        <div class="section-container">
+            <div class="section-header reveal">
+                <span class="section-label">Transparency</span>
+                <h2>Governance & Accountability</h2>
+                <p>Transparency is the currency of NGOs. Our governance framework ensures accountability to communities, partners, and regulators.</p>
+            </div>
+            <div class="governance-grid">
+                <div class="governance-card reveal">
+                    <h3><i class="fas fa-certificate"></i> Registration</h3>
+                    <p>Registered as a South African Non-Profit Company under the Companies Act.</p>
+                    <div class="reg-number">K2026371011</div>
+                    <p style="margin-top:1rem; font-size:0.85rem; color:var(--text-light);">Legal Structure: Non-Profit Company (NPC), South African law</p>
+                </div>
+                <div class="governance-card reveal">
+                    <h3><i class="fas fa-users"></i> Board of Directors</h3>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Minimum 5 members required</li>
+                        <li><i class="fas fa-check"></i> Non-executive majority</li>
+                        <li><i class="fas fa-check"></i> Independent chair</li>
+                        <li><i class="fas fa-check"></i> Annual independent financial audit</li>
+                        <li><i class="fas fa-check"></i> Public impact reporting</li>
+                    </ul>
+                </div>
+                <div class="governance-card reveal">
+                    <h3><i class="fas fa-clipboard-check"></i> Accountability</h3>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Community Stakeholder Forum (quarterly)</li>
+                        <li><i class="fas fa-check"></i> Beneficiary feedback (SMS/app-based)</li>
+                        <li><i class="fas fa-check"></i> Partner review cycle (biannual)</li>
+                        <li><i class="fas fa-check"></i> Annual public impact report</li>
+                    </ul>
+                </div>
+                <div class="governance-card reveal">
+                    <h3><i class="fas fa-shield-halved"></i> Ethics & Compliance</h3>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Conflict of interest policy</li>
+                        <li><i class="fas fa-check"></i> Whistleblower mechanism</li>
+                        <li><i class="fas fa-check"></i> Procurement transparency</li>
+                        <li><i class="fas fa-check"></i> POPIA data privacy compliance</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="governance-card reveal" style="margin-top:2rem; text-align:center;">
+                <h3><i class="fas fa-file-contract"></i> Advisory Board (In Formation)</h3>
+                <p style="max-width:700px; margin:0 auto;">We are assembling an advisory board with expertise in aviation regulation (ex-SACAA), rural health systems (ex-KZN District Health), veterinary epidemiology (University of Pretoria / Fort Hare), impact investment, and community development (Traditional Leadership / NGO sector).</p>
+            </div>
+        </div>
+    </section>
+
     <!-- Investors -->
     <section class="investors" id="invest">
         <div class="section-container">
-            <div class="section-header">
+            <div class="section-header reveal">
                 <span class="section-label">For Investors</span>
                 <h2>The Opportunity</h2>
                 <p>A $12B market growing at 34% CAGR. Proven unit economics in comparable African contexts. Clear path to scale.</p>
             </div>
             <div class="investor-grid">
-                <div class="investor-card">
+                <div class="investor-card reveal">
                     <i class="fas fa-globe-africa"></i>
                     <h3>$12B</h3>
                     <p>Total Addressable Market for medical drone logistics in Sub-Saharan Africa</p>
                 </div>
-                <div class="investor-card">
+                <div class="investor-card reveal">
                     <i class="fas fa-bullseye"></i>
                     <h3>$2.4B</h3>
                     <p>Serviceable Available Market in Southern Africa over next decade</p>
                 </div>
-                <div class="investor-card">
+                <div class="investor-card reveal">
                     <i class="fas fa-chart-line"></i>
                     <h3>34%</h3>
                     <p>Compound Annual Growth Rate in African medical UAV logistics sector</p>
                 </div>
             </div>
-            <div class="unit-economics">
+            <div class="unit-economics reveal">
                 <div class="unit-econ-item">
                     <h4>$47</h4>
                     <p>Cost per delivery</p>
@@ -1759,7 +2317,7 @@
                     <p>Payback period</p>
                 </div>
             </div>
-            <div class="the-ask">
+            <div class="the-ask reveal">
                 <h3>Series A: $3.5M</h3>
                 <p>Funding 12 distribution hubs across KwaZulu-Natal, impacting 50,000 lives in the first 24 months of operations.</p>
                 <div class="ask-metrics">
@@ -1809,7 +2367,7 @@
                 <div class="footer-brand">
                     <h3>SAHWARA AEROMEDIQ NPC</h3>
                     <p class="tagline">"Wings of Hope, Hands of Care"</p>
-                    <p>A South African registered Non-Profit Company pioneering integrated One Health logistics for underserved rural communities through autonomous aerial medical delivery.</p>
+                    <p>A South African registered Non-Profit Company (Reg: K2026371011) pioneering integrated One Health logistics for underserved rural communities through autonomous aerial medical delivery.</p>
                     <div class="footer-contact-item">
                         <i class="fas fa-location-dot"></i>
                         <span>Block 1, 219 Han View, Maubane, South Africa</span>
@@ -1827,7 +2385,9 @@
                     <h4>Company</h4>
                     <ul>
                         <li><a href="#crisis">The Crisis</a></li>
+                <li><a href="#mission">Mission</a></li>
                         <li><a href="#solution">Our Solution</a></li>
+                        <li><a href="#mission">Mission & Vision</a></li>
                         <li><a href="#one-health">One Health</a></li>
                         <li><a href="#model">Business Model</a></li>
                     </ul>
@@ -1837,21 +2397,21 @@
                     <ul>
                         <li><a href="#roadmap">Roadmap</a></li>
                         <li><a href="#team">Leadership</a></li>
+                        <li><a href="#governance">Governance</a></li>
                         <li><a href="#invest">Investor Info</a></li>
-                        <li><a href="#" onclick="openModal('pilot'); return false;">Pilot Program</a></li>
                     </ul>
                 </div>
                 <div class="footer-links">
                     <h4>Stay Updated</h4>
-                    <p style="font-size:0.9rem; color:rgba(255,255,255,0.6); margin-bottom:1rem;">Subscribe for updates on our pilot launch and partnership opportunities.</p>
+                    <p style="font-size:0.85rem; color:rgba(255,255,255,0.6); margin-bottom:0.75rem;">Subscribe for updates on our pilot launch and partnership opportunities.</p>
                     <form class="newsletter-form" onsubmit="handleNewsletter(event)">
                         <input type="email" placeholder="Your email address" required>
-                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                        <button type="submit" aria-label="Subscribe"><i class="fas fa-paper-plane"></i></button>
                     </form>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>SAHWARA AEROMEDIQ NPC. All rights reserved. 2026.</p>
+                <p>SAHWARA AEROMEDIQ NPC &middot; Reg: K2026371011 &middot; All rights reserved. 2026.</p>
                 <div class="footer-social">
                     <a href="https://www.linkedin.com/in/godfrey-chitsauko-muyambi-phd-2b1b70106/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
                     <a href="mailto:muyambigodfrey@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
@@ -1864,7 +2424,7 @@
     <div class="modal-overlay" id="modalOverlay">
         <!-- Pilot Modal -->
         <div class="modal" id="pilotModal" style="display:none;">
-            <button class="modal-close" onclick="closeModal()">&times;</button>
+            <button class="modal-close" onclick="closeModal()" aria-label="Close">&times;</button>
             <h3>Request Pilot Program</h3>
             <p>Join our pre-launch pilot in uThukela District, KwaZulu-Natal. Limited partnerships available for clinics, pharmacies, and veterinary posts.</p>
             <form onsubmit="handleFormSubmit(event, 'pilot')">
@@ -1899,7 +2459,7 @@
                     <label>Message (Optional)</label>
                     <textarea placeholder="Tell us about your facility and supply chain challenges..."></textarea>
                 </div>
-                <button type="submit" class="btn btn-primary" style="width:100%; justify-content:center;">
+                <button type="submit" class="btn btn-primary" style="width:100%;">
                     <i class="fas fa-paper-plane"></i>
                     Submit Request
                 </button>
@@ -1908,7 +2468,7 @@
 
         <!-- Investor Modal -->
         <div class="modal" id="investorModal" style="display:none;">
-            <button class="modal-close" onclick="closeModal()">&times;</button>
+            <button class="modal-close" onclick="closeModal()" aria-label="Close">&times;</button>
             <h3>Request Investor Deck</h3>
             <p>Access our comprehensive investment memorandum including financial projections, unit economics, risk analysis, and impact framework.</p>
             <form onsubmit="handleFormSubmit(event, 'investor')">
@@ -1944,7 +2504,7 @@
                     <label>Message (Optional)</label>
                     <textarea placeholder="Tell us about your investment focus and interest in Sahwara..."></textarea>
                 </div>
-                <button type="submit" class="btn btn-gold" style="width:100%; justify-content:center;">
+                <button type="submit" class="btn btn-gold" style="width:100%;">
                     <i class="fas fa-file-pdf"></i>
                     Request Deck
                 </button>
@@ -1967,6 +2527,7 @@
         function toggleMobileMenu() {
             const menu = document.getElementById('mobileMenu');
             menu.classList.toggle('active');
+            document.body.style.overflow = menu.classList.contains('active') ? 'hidden' : '';
         }
 
         // Modal functions
@@ -1992,6 +2553,10 @@
             const overlay = document.getElementById('modalOverlay');
             overlay.classList.remove('active');
             document.body.style.overflow = '';
+            const menu = document.getElementById('mobileMenu');
+            if (menu.classList.contains('active')) {
+                document.body.style.overflow = 'hidden';
+            }
         }
 
         // Close modal on overlay click
@@ -2005,6 +2570,10 @@
         document.addEventListener('keydown', function(e) {
             if (e.key === 'Escape') {
                 closeModal();
+                const menu = document.getElementById('mobileMenu');
+                if (menu.classList.contains('active')) {
+                    toggleMobileMenu();
+                }
             }
         });
 
@@ -2013,7 +2582,6 @@
             event.preventDefault();
             const form = event.target;
 
-            // Simulate form submission
             const btn = form.querySelector('button[type="submit"]');
             const originalText = btn.innerHTML;
             btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
@@ -2064,7 +2632,7 @@
                     e.preventDefault();
                     const target = document.querySelector(href);
                     if (target) {
-                        const offset = 80;
+                        const offset = 70;
                         const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - offset;
                         window.scrollTo({
                             top: targetPosition,
@@ -2074,6 +2642,18 @@
                 }
             });
         });
+
+        // Scroll reveal animation
+        const revealElements = document.querySelectorAll('.reveal');
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+        revealElements.forEach(el => revealObserver.observe(el));
     </script>
 </body>
 </html>
